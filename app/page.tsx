@@ -221,6 +221,129 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Target Audience Section */}
+      <section className="py-24 bg-white">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <span className="text-blue-600 text-sm font-semibold uppercase tracking-widest">Target Audience</span>
+            <h2 className="text-4xl md:text-5xl font-bold mt-4 text-slate-900">이런 분들을 위한 교육입니다</h2>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {targetAudience.map((item, index) => (
+              <div
+                key={index}
+                className="p-8 bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-100 rounded-2xl hover:border-blue-300 hover:shadow-xl transition-all"
+              >
+                <div className="w-14 h-14 bg-blue-600 rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-blue-600/30">
+                  <item.icon size={28} className="text-white" />
+                </div>
+                <h3 className="text-xl font-bold mb-3 text-slate-900">{item.title}</h3>
+                <p className="text-slate-600 leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Core Process Section */}
+      <section className="py-24 bg-slate-50">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <span className="text-blue-600 text-sm font-semibold uppercase tracking-widest">Process</span>
+            <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 text-slate-900">핵심 프로세스</h2>
+            <p className="text-slate-600 max-w-2xl mx-auto text-lg">
+              딜룸과 AI 분석을 활용한 실전 중심의 M&A 학습 경험
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {processSteps.map((step, index) => (
+              <div
+                key={index}
+                className="relative p-8 bg-white border border-slate-200 rounded-2xl text-center hover:shadow-xl transition-all"
+              >
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-base font-bold text-white shadow-lg">
+                  {index + 1}
+                </div>
+                <div className="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mt-4 mb-4">
+                  <step.icon size={32} className="text-blue-600" />
+                </div>
+                <h3 className="font-bold mb-3 text-slate-900 text-lg">{step.title}</h3>
+                <p className="text-slate-600 text-sm leading-relaxed">{step.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Partners Section */}
+      <section className="py-24 bg-slate-50">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <span className="text-blue-600 text-sm font-semibold uppercase tracking-widest">Partners</span>
+            <h2 className="text-4xl md:text-5xl font-bold mt-4 text-slate-900">운영 주체</h2>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {partners.map((partner, index) => (
+              <div
+                key={index}
+                className="p-8 bg-white border border-slate-200 rounded-2xl text-center hover:shadow-xl transition-all"
+              >
+                {partner.logo ? (
+                  <div className="w-full h-24 flex items-center justify-center mb-6">
+                    <div className={`relative ${partner.name === '팩트시트' ? 'h-32 w-96' : 'h-16 w-48'}`}>
+                      <Image
+                        src={partner.logo}
+                        alt={partner.name}
+                        fill
+                        className="object-contain"
+                        unoptimized
+                      />
+                    </div>
+                  </div>
+                ) : (
+                  <div className="w-full h-16 bg-slate-100 rounded-lg flex items-center justify-center mb-6 text-xl font-bold text-slate-700">
+                    {partner.name}
+                  </div>
+                )}
+                <p className="text-slate-600">{partner.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Instructors Section */}
+      <section className="py-24 bg-white">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <span className="text-blue-600 text-sm font-semibold uppercase tracking-widest">Instructors</span>
+            <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 text-slate-900">전문 강사진</h2>
+            <p className="text-slate-600 max-w-2xl mx-auto text-lg">
+              M&A 현장에서 활동하는 최고의 전문가들이 함께합니다
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {instructors.map((instructor, index) => (
+              <div
+                key={index}
+                className="p-6 bg-white border border-slate-200 rounded-2xl text-center hover:border-blue-300 hover:shadow-xl transition-all"
+              >
+                <div className="w-24 h-24 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full mx-auto mb-4 flex items-center justify-center text-3xl font-bold text-white shadow-lg">
+                  {instructor.name.charAt(0)}
+                </div>
+                <h3 className="text-xl font-bold mb-1 text-slate-900">{instructor.name}</h3>
+                <p className="text-blue-600 text-sm mb-3 font-semibold">{instructor.role}</p>
+                <p className="text-slate-600 text-sm">{instructor.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Curriculum Section */}
       <section id="curriculum" className="py-24 bg-slate-50">
         <div className="max-w-6xl mx-auto px-6">
@@ -295,129 +418,6 @@ export default function Home() {
               </div>
             </div>
           ))}
-        </div>
-      </section>
-
-      {/* Target Audience Section */}
-      <section className="py-24 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <span className="text-blue-600 text-sm font-semibold uppercase tracking-widest">Target Audience</span>
-            <h2 className="text-4xl md:text-5xl font-bold mt-4 text-slate-900">이런 분들을 위한 교육입니다</h2>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {targetAudience.map((item, index) => (
-              <div
-                key={index}
-                className="p-8 bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-100 rounded-2xl hover:border-blue-300 hover:shadow-xl transition-all"
-              >
-                <div className="w-14 h-14 bg-blue-600 rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-blue-600/30">
-                  <item.icon size={28} className="text-white" />
-                </div>
-                <h3 className="text-xl font-bold mb-3 text-slate-900">{item.title}</h3>
-                <p className="text-slate-600 leading-relaxed">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Core Process Section */}
-      <section className="py-24 bg-slate-50">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <span className="text-blue-600 text-sm font-semibold uppercase tracking-widest">Process</span>
-            <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 text-slate-900">핵심 프로세스</h2>
-            <p className="text-slate-600 max-w-2xl mx-auto text-lg">
-              딜룸과 AI 분석을 활용한 실전 중심의 M&A 학습 경험
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {processSteps.map((step, index) => (
-              <div
-                key={index}
-                className="relative p-8 bg-white border border-slate-200 rounded-2xl text-center hover:shadow-xl transition-all"
-              >
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-base font-bold text-white shadow-lg">
-                  {index + 1}
-                </div>
-                <div className="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mt-4 mb-4">
-                  <step.icon size={32} className="text-blue-600" />
-                </div>
-                <h3 className="font-bold mb-3 text-slate-900 text-lg">{step.title}</h3>
-                <p className="text-slate-600 text-sm leading-relaxed">{step.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Instructors Section */}
-      <section className="py-24 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <span className="text-blue-600 text-sm font-semibold uppercase tracking-widest">Instructors</span>
-            <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 text-slate-900">전문 강사진</h2>
-            <p className="text-slate-600 max-w-2xl mx-auto text-lg">
-              M&A 현장에서 활동하는 최고의 전문가들이 함께합니다
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {instructors.map((instructor, index) => (
-              <div
-                key={index}
-                className="p-6 bg-white border border-slate-200 rounded-2xl text-center hover:border-blue-300 hover:shadow-xl transition-all"
-              >
-                <div className="w-24 h-24 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full mx-auto mb-4 flex items-center justify-center text-3xl font-bold text-white shadow-lg">
-                  {instructor.name.charAt(0)}
-                </div>
-                <h3 className="text-xl font-bold mb-1 text-slate-900">{instructor.name}</h3>
-                <p className="text-blue-600 text-sm mb-3 font-semibold">{instructor.role}</p>
-                <p className="text-slate-600 text-sm">{instructor.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Partners Section */}
-      <section className="py-24 bg-slate-50">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <span className="text-blue-600 text-sm font-semibold uppercase tracking-widest">Partners</span>
-            <h2 className="text-4xl md:text-5xl font-bold mt-4 text-slate-900">운영 주체</h2>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {partners.map((partner, index) => (
-              <div
-                key={index}
-                className="p-8 bg-white border border-slate-200 rounded-2xl text-center hover:shadow-xl transition-all"
-              >
-                {partner.logo ? (
-                  <div className="w-full h-24 flex items-center justify-center mb-6">
-                    <div className={`relative ${partner.name === '팩트시트' ? 'h-32 w-96' : 'h-16 w-48'}`}>
-                      <Image
-                        src={partner.logo}
-                        alt={partner.name}
-                        fill
-                        className="object-contain"
-                        unoptimized
-                      />
-                    </div>
-                  </div>
-                ) : (
-                  <div className="w-full h-16 bg-slate-100 rounded-lg flex items-center justify-center mb-6 text-xl font-bold text-slate-700">
-                    {partner.name}
-                  </div>
-                )}
-                <p className="text-slate-600">{partner.desc}</p>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
