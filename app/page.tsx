@@ -66,7 +66,7 @@ export default function Home() {
   const partners = [
     { name: '벤처스퀘어', desc: '국내 최대 스타트업 미디어 & 액셀러레이터', logo: '/assets/logo/VentureSquare_Ci.png' },
     { name: '아일럼인베스트', desc: '전략적 M&A 투자 전문', logo: null },
-    { name: '팩트시트', desc: 'AI 기반 M&A 데이터룸 플랫폼', logo: '/assets/logo/FactSheet_Ci.png' }
+    { name: '팩트시트', desc: 'M&A 소개 멘트', logo: '/assets/logo/FactSheet_Ci.png' }
   ];
 
   const targetAudience = [
