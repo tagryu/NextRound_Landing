@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   title: "Next Round M&A | 실전 M&A 실무 교육",
   description: "벤처스퀘어, 아일럼인베스트, 팩트시트가 함께하는 5주간의 실전 M&A 및 기업 매각 마스터 클래스. AI 딜룸 분석과 전문가 네트워킹을 경험하세요.",
   icons: {
-    icon: "/favicon.ico", // 파비콘 파일이 있다면 경로 지정
+    icon: "/favicon.svg",
   },
 };
 
