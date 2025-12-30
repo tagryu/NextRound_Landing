@@ -145,7 +145,7 @@ export default function Home() {
             rel="noopener noreferrer"
             className="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-full text-sm transition-all shadow-md hover:shadow-lg"
           >
-            신청하기
+            교육 신청하기
           </a>
         </div>
       </nav>
