@@ -55,12 +55,12 @@ export default function Home() {
   ];
 
   const instructors = [
-    { name: '명승은', role: '벤처스퀘어 대표', desc: 'M&A 생태계 및 시장 구조 전문가' },
-    { name: '지현철', role: '아일럼인베스트 대표', desc: '투자 및 인수합병 전략 자문' },
-    { name: '전명석', role: '회계사', desc: '밸류에이션 및 재무 실사 전문' },
-    { name: '함세희', role: '팩트시트 대표', desc: 'AI 기반 데이터룸 솔루션' },
-    { name: '장효준', role: '변호사', desc: 'M&A 계약 및 법률 자문' },
-    { name: '고민철', role: '심사역', desc: '딜 매칭 및 협상 전략' }
+    { name: '명승은', role: '벤처스퀘어 대표', desc: 'M&A 생태계 및 시장 구조 전문가', image: null },
+    { name: '지현철', role: '아일럼인베스트 대표', desc: '투자 및 인수합병 전략 자문', image: null },
+    { name: '전명석', role: '회계사', desc: '밸류에이션 및 재무 실사 전문', image: null },
+    { name: '함세희', role: '팩트시트 대표', desc: 'AI 기반 데이터룸 솔루션', image: '/assets/profile/함세희.png' },
+    { name: '장효준', role: '변호사', desc: 'M&A 계약 및 법률 자문', image: null },
+    { name: '고민철', role: '심사역', desc: '딜 매칭 및 협상 전략', image: null }
   ];
 
   const partners = [
@@ -88,9 +88,9 @@ export default function Home() {
   ];
 
   const processSteps = [
-    { icon: FileText, title: '딜룸 업로드 및 분석', desc: 'IR자료, 회사소개서 등 기업 정보를 딜룸에 업로드하고 AI Agent가 자동 분석' },
-    { icon: Handshake, title: '실습 교육 & 매칭', desc: '교육 중 실제 기업 케이스로 실습하고 매칭 진행' },
-    { icon: Network, title: '네트워크', desc: 'M&A 전문가 커뮤니티 형성 및 지속적 교류' }
+    { icon: FileText, title: '딜룸 업로드 및 분석', desc: 'IR자료, 회사소개서 등 기업 정보를 딜룸에 업로드, 팩트 기반 분석' },
+    { icon: Handshake, title: '실습 교육 & 매칭', desc: '교육 중 실제 기업 케이스로 실습\n딜룸 정보에 따른 매칭 진행' },
+    { icon: Network, title: '네트워크', desc: 'M&A 전문가 커뮤니티 형성\n지속적 매칭 및 교류' }
   ];
 
   const faqs = [
@@ -153,14 +153,18 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center pt-20">
-          <div className="inline-block px-4 py-2 border border-blue-500/30 bg-blue-500/10 rounded-full text-blue-700 font-semibold text-sm mb-8">
+          <div className="inline-block px-4 py-2 border border-blue-500/30 bg-blue-500/10 rounded-full text-blue-700 font-semibold text-sm mb-4">
             2025년 1월 14일 개강 · 5주 과정
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-6 text-slate-900">
-            M&A, 다음 라운드를
+          <h1 className="text-6xl md:text-8xl font-black leading-tight mb-6 mt-0">
+            <span className="inline-block transform hover:scale-105 transition-transform duration-300">
+              <span className="text-slate-900">Next Round</span>
+            </span>
             <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">준비하세요</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600">
+              M&A
+            </span>
           </h1>
 
           <p className="text-xl md:text-2xl text-slate-700 mb-4 leading-relaxed">
@@ -253,7 +257,7 @@ export default function Home() {
             <span className="text-blue-600 text-sm font-semibold uppercase tracking-widest">Process</span>
             <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 text-slate-900">핵심 프로세스</h2>
             <p className="text-slate-600 max-w-2xl mx-auto text-lg">
-              딜룸과 AI 분석을 활용한 실전 중심의 M&A 학습 경험
+              딜룸과 팩트 기반 분석을 활용한 실전 중심의 M&A 학습 네트워크
             </p>
           </div>
 
@@ -270,7 +274,7 @@ export default function Home() {
                   <step.icon size={32} className="text-blue-600" />
                 </div>
                 <h3 className="font-bold mb-3 text-slate-900 text-lg">{step.title}</h3>
-                <p className="text-slate-600 text-sm leading-relaxed">{step.desc}</p>
+                <p className="text-slate-600 text-sm leading-relaxed whitespace-pre-line">{step.desc}</p>
               </div>
             ))}
           </div>
@@ -332,9 +336,23 @@ export default function Home() {
                 key={index}
                 className="p-6 bg-white border border-slate-200 rounded-2xl text-center hover:border-blue-300 hover:shadow-xl transition-all"
               >
-                <div className="w-24 h-24 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full mx-auto mb-4 flex items-center justify-center text-3xl font-bold text-white shadow-lg">
-                  {instructor.name.charAt(0)}
-                </div>
+                {instructor.image ? (
+                  <div className="w-full h-48 mb-4 flex items-end justify-center">
+                    <div className="relative w-40 h-48">
+                      <Image
+                        src={instructor.image}
+                        alt={instructor.name}
+                        fill
+                        className="object-contain object-bottom"
+                        unoptimized
+                      />
+                    </div>
+                  </div>
+                ) : (
+                  <div className="w-24 h-24 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full mx-auto mb-4 flex items-center justify-center text-3xl font-bold text-white shadow-lg">
+                    {instructor.name.charAt(0)}
+                  </div>
+                )}
                 <h3 className="text-xl font-bold mb-1 text-slate-900">{instructor.name}</h3>
                 <p className="text-blue-600 text-sm mb-3 font-semibold">{instructor.role}</p>
                 <p className="text-slate-600 text-sm">{instructor.desc}</p>
@@ -435,13 +453,13 @@ export default function Home() {
               <div className="flex items-start gap-2 text-slate-700 mb-6">
                 <MapPin size={20} className="text-blue-600 flex-shrink-0 mt-1" />
                 <div>
-                  <p className="font-medium">서울특별시 강남구 언주로 417 7층</p>
-                  <p className="text-slate-500 text-sm mt-1">선릉역 도보 5분</p>
+                  <p className="font-medium">서울 강남구 언주로 417 더체크타워 7층</p>
+                  <p className="text-slate-500 text-sm mt-1">(지번) 역삼동 721-38 · 선릉역 도보 5분</p>
                 </div>
               </div>
               <div className="flex-1 border border-slate-200 rounded-xl overflow-hidden min-h-[300px]">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3164.8889!2d127.045!3d37.5075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzfCsDMwJzI3LjAiTiAxMjfCsDAyJzUwLjEiRQ!5e0!3m2!1sko!2skr!4v1234567890"
+                  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=서울+강남구+언주로+417+더체크타워&language=ko"
                   width="100%"
                   height="100%"
                   style={{ border: 0, minHeight: '300px' }}
