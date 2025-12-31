@@ -232,7 +232,7 @@ export default function Home() {
                   src="/assets/logo/VentureSquare_Ci.png"
                   alt="벤처스퀘어"
                   fill
-                  className="object-contain"
+                  className="object-contain brightness-0 invert"
                   unoptimized
                 />
               </div>
@@ -248,7 +248,7 @@ export default function Home() {
                   src="/assets/logo/FactSheet_Ci.png"
                   alt="팩트시트"
                   fill
-                  className="object-contain"
+                  className="object-contain brightness-0 invert"
                   unoptimized
                 />
               </div>
