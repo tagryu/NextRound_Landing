@@ -66,7 +66,7 @@ export default function Home() {
   const partners = [
     { name: '벤처스퀘어', desc: '국내 최대 스타트업 미디어 & 액셀러레이터', logo: '/assets/logo/VentureSquare_Ci.png' },
     { name: '아일럼인베스트', desc: '전략적 M&A 투자 전문', logo: null },
-    { name: '팩트시트', desc: 'M&A 소개 멘트', logo: '/assets/logo/FactSheet_Ci.png' }
+    { name: '팩트시트', desc: '투자자를 위한 스타트업 정보 관리 플랫폼', logo: '/assets/logo/FactSheet_Ci.png' }
   ];
 
   const targetAudience = [
@@ -520,31 +520,54 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-4 content-start">
-              {placeImages.map((place, i) => (
+            <div className="flex flex-col gap-4">
+              {/* 큰 이미지 (첫 번째) */}
+              {placeImages.length > 0 && (
                 <div
-                  key={i}
-                  className="aspect-video relative rounded-xl overflow-hidden border border-slate-200 cursor-pointer transition-transform hover:scale-105"
-                  onClick={() => openModal(i)}
+                  className="aspect-video relative rounded-xl overflow-hidden border border-slate-200 cursor-pointer transition-transform hover:scale-[1.02]"
+                  onClick={() => openModal(0)}
                 >
                   <Image
-                    src={`/assets/place/${place.name}.jpeg`}
-                    alt={place.label}
+                    src={`/assets/place/${placeImages[0].name}.jpeg`}
+                    alt={placeImages[0].label}
                     fill
                     className="object-cover"
                     unoptimized
                   />
                 </div>
-              ))}
+              )}
+              {/* 작은 이미지 3개 (가로 배치) */}
+              <div className="grid grid-cols-3 gap-4">
+                {placeImages.slice(1, 4).map((place, i) => (
+                  <div
+                    key={i}
+                    className="aspect-video relative rounded-xl overflow-hidden border border-slate-200 cursor-pointer transition-transform hover:scale-105"
+                    onClick={() => openModal(i + 1)}
+                  >
+                    <Image
+                      src={`/assets/place/${place.name}.jpeg`}
+                      alt={place.label}
+                      fill
+                      className="object-cover"
+                      unoptimized
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Pricing Section */}
-      <section id="pricing" className="py-24 bg-white">
-        <div className="max-w-3xl mx-auto px-6">
-          <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-3xl p-10 md:p-16 text-center border border-blue-100">
+      <section id="pricing" className="py-24 bg-slate-50">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <span className="text-blue-600 text-sm font-semibold uppercase tracking-widest">Price</span>
+            <h2 className="text-4xl md:text-5xl font-bold mt-4 text-slate-900">가격</h2>
+          </div>
+
+          <div className="max-w-xl mx-auto bg-white rounded-2xl p-10 text-center shadow-lg">
             <div className="inline-block px-4 py-1.5 bg-red-500 text-white rounded-full text-sm font-semibold mb-6">
               1기 특별 할인
             </div>
@@ -553,8 +576,8 @@ export default function Home() {
               <div className="text-slate-500 text-base mb-3">
                 <span className="line-through">정상가 2,500,000원</span>
               </div>
-              <div className="text-6xl md:text-7xl font-black text-slate-900 mb-3">
-                1,500,000<span className="text-4xl">원</span>
+              <div className="text-5xl md:text-6xl font-black text-slate-900 mb-3">
+                1,500,000<span className="text-3xl">원</span>
               </div>
               <div className="text-slate-600">
                 VAT 별도
@@ -565,7 +588,7 @@ export default function Home() {
               href="https://event-us.kr"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-12 py-5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-full text-lg transition-all shadow-lg hover:shadow-xl hover:scale-105"
+              className="inline-flex items-center justify-center gap-2 px-10 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-full text-lg transition-all shadow-lg hover:shadow-xl hover:scale-105"
             >
               교육 신청하기
               <ArrowRight size={22} />
@@ -660,54 +683,70 @@ export default function Home() {
         </div>
       )}
 
-      {/* Final CTA Section */}
-      <section id="apply" className="py-24 bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-600 relative overflow-hidden">
-        <div className="max-w-3xl mx-auto px-6 text-center relative z-10">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-            M&A의 다음 라운드,
-            <br />
-            <span className="text-blue-100">지금 시작하세요</span>
-          </h2>
+      {/* Final CTA Section + Footer */}
+      <section id="apply" className="relative overflow-hidden">
+        {/* 배경 이미지 (히어로 섹션과 동일) */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/assets/renewal/hero_background.png"
+            alt="Background"
+            fill
+            className="object-cover"
+            unoptimized
+          />
+          {/* 위쪽은 밝게, 아래로 갈수록 어둡게 */}
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/60 to-slate-900/90"></div>
+        </div>
 
-          <p className="text-xl text-blue-100 mb-8">
-            2025년 1월 14일 개강 · 선착순 마감
-          </p>
+        {/* CTA 영역 */}
+        <div className="relative z-10 pt-24 pb-16">
+          <div className="max-w-3xl mx-auto px-6 text-center">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+              M&A의 다음 라운드,
+              <br />
+              지금 시작하세요
+            </h2>
 
-          <a
-            href="https://event-us.kr"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-10 py-5 bg-white hover:bg-blue-50 text-blue-600 font-bold rounded-full text-xl transition-all shadow-2xl"
-          >
-            교육 신청하기
-            <ArrowRight size={24} />
-          </a>
+            <p className="text-lg text-slate-300 mb-8">
+              2025년 1월 14일 개강 · 선착순 마감
+            </p>
 
-          <p className="mt-8 text-blue-100">
-            문의:{' '}
-            <a href="mailto:edu@venturesquare.net" className="text-white hover:underline font-medium">
-              edu@venturesquare.net
+            <a
+              href="https://event-us.kr"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-white hover:bg-slate-100 text-slate-900 font-bold rounded-full text-lg transition-all"
+            >
+              교육 신청하기
+              <ArrowRight size={20} />
             </a>
-          </p>
+
+            <p className="mt-8 text-slate-400 text-sm">
+              문의:{' '}
+              <a href="mailto:edu@venturesquare.net" className="text-white hover:underline">
+                edu@venturesquare.net
+              </a>
+            </p>
+          </div>
         </div>
+
+        {/* Footer 영역 */}
+        <footer className="relative z-10 py-8 border-t border-slate-800">
+          <div className="max-w-6xl mx-auto px-6 text-center">
+            <div className="text-lg font-bold mb-3 text-white">
+              Next Round <span className="text-blue-400">M&A</span>
+            </div>
+
+            <div className="text-slate-500 text-sm mb-2">
+              벤처스퀘어 · 아일럼인베스트 · 팩트시트
+            </div>
+
+            <div className="text-slate-600 text-sm">
+              © 2025 Next Round M&A. All rights reserved.
+            </div>
+          </div>
+        </footer>
       </section>
-
-      {/* Footer */}
-      <footer className="py-12 bg-slate-900 border-t border-slate-800">
-        <div className="max-w-6xl mx-auto px-6 text-center">
-          <div className="text-xl font-bold mb-4 text-white">
-            Next Round <span className="text-blue-400">M&A</span>
-          </div>
-
-          <div className="text-slate-400 text-sm mb-2">
-            벤처스퀘어 · 아일럼인베스트 · 팩트시트
-          </div>
-
-          <div className="text-slate-500 text-sm">
-            © 2025 Next Round M&A. All rights reserved.
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }
