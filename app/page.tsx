@@ -179,7 +179,7 @@ export default function Home() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/assets/renewal/hero_background.png"
+            src="/assets/renewal/hero_background_optimized.jpg"
             alt="Background"
             fill
             className="object-cover"
@@ -688,7 +688,7 @@ export default function Home() {
         {/* 배경 이미지 (히어로 섹션과 동일) */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/assets/renewal/hero_background.png"
+            src="/assets/renewal/hero_background_optimized.jpg"
             alt="Background"
             fill
             className="object-cover"
