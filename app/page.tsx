@@ -65,7 +65,7 @@ export default function Home() {
 
   const partners = [
     { name: '벤처스퀘어', desc: '국내 최대 스타트업 미디어 & 액셀러레이터', logo: '/assets/logo/VentureSquare_Ci.png' },
-    { name: '아일럼인베스트', desc: '전략적 M&A 투자 전문', logo: null },
+    { name: '아일럼인베스트', desc: '전략적 M&A 투자 전문', logo: '/assets/logo/yleminvest.png' },
     { name: '팩트시트', desc: '투자자를 위한 스타트업 정보 관리 플랫폼', logo: '/assets/logo/FactSheet_Ci.png' }
   ];
 
@@ -225,30 +225,36 @@ export default function Home() {
             </a>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
-            <div className="h-20 flex items-center justify-center">
-              <div className="relative h-12 w-48">
+          <div className="flex flex-wrap justify-center items-center gap-4 md:gap-8 max-w-2xl mx-auto">
+            <div className="flex items-center justify-center">
+              <div className="relative h-8 w-32 md:h-10 md:w-40">
                 <Image
-                  src="/assets/logo/VentureSquare_Ci.png"
+                  src="/assets/logo/VentureSquare_hero.png"
                   alt="벤처스퀘어"
+                  fill
+                  className="object-contain"
+                  unoptimized
+                />
+              </div>
+            </div>
+            <div className="flex items-center justify-center">
+              <div className="relative h-12 w-44 md:h-16 md:w-56">
+                <Image
+                  src="/assets/logo/yleminvest.png"
+                  alt="아일럼인베스트"
                   fill
                   className="object-contain brightness-0 invert"
                   unoptimized
                 />
               </div>
             </div>
-            <div className="h-20 flex items-center justify-center">
-              <span className="text-base text-white font-medium">
-                아일럼인베스트
-              </span>
-            </div>
-            <div className="h-20 flex items-center justify-center">
-              <div className="relative h-32 w-56">
+            <div className="flex items-center justify-center">
+              <div className="relative h-16 w-36 md:h-24 md:w-48 mt-1 md:mt-2">
                 <Image
-                  src="/assets/logo/FactSheet_Ci.png"
+                  src="/assets/logo/factsheet_hero.png"
                   alt="팩트시트"
                   fill
-                  className="object-contain brightness-0 invert"
+                  className="object-contain"
                   unoptimized
                 />
               </div>
@@ -329,7 +335,7 @@ export default function Home() {
               >
                 {partner.logo ? (
                   <div className="w-full h-24 flex items-center justify-center mb-6">
-                    <div className={`relative ${partner.name === '팩트시트' ? 'h-32 w-96' : 'h-16 w-48'}`}>
+                    <div className={`relative ${partner.name === '팩트시트' ? 'h-32 w-full max-w-[280px]' : 'h-16 w-full max-w-[200px]'}`}>
                       <Image
                         src={partner.logo}
                         alt={partner.name}
@@ -362,15 +368,15 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
             {instructors.map((instructor, index) => (
               <div
                 key={index}
                 className="relative bg-white rounded-2xl overflow-hidden hover:shadow-xl transition-all group"
               >
                 {/* Logo in top right */}
-                <div className="absolute top-3 right-3 z-20">
-                  <span className="text-[10px] font-bold text-slate-700">Next Round <span className="text-blue-600">M&A</span></span>
+                <div className="absolute top-2 right-2 md:top-3 md:right-3 z-20">
+                  <span className="text-[8px] md:text-[10px] font-bold text-slate-700">Next Round <span className="text-blue-600">M&A</span></span>
                 </div>
 
                 {/* Gradient Background Section */}
@@ -401,10 +407,10 @@ export default function Home() {
                 </div>
 
                 {/* Info Section - White Background */}
-                <div className="bg-white pt-4 pb-5 px-5 text-center">
-                  <h3 className="text-xl font-bold mb-1 text-slate-900">{instructor.name}</h3>
-                  <p className="text-blue-600 text-sm mb-1 font-semibold">{instructor.role}</p>
-                  <p className="text-slate-600 text-sm leading-relaxed">{instructor.desc}</p>
+                <div className="bg-white pt-3 pb-4 px-3 md:pt-4 md:pb-5 md:px-5 text-center">
+                  <h3 className="text-base md:text-xl font-bold mb-1 text-slate-900">{instructor.name}</h3>
+                  <p className="text-blue-600 text-xs md:text-sm mb-1 font-semibold">{instructor.role}</p>
+                  <p className="text-slate-600 text-xs md:text-sm leading-relaxed">{instructor.desc}</p>
                 </div>
               </div>
             ))}
@@ -537,7 +543,7 @@ export default function Home() {
                 </div>
               )}
               {/* 작은 이미지 3개 (가로 배치) */}
-              <div className="grid grid-cols-3 gap-4">
+              <div className="grid grid-cols-3 gap-2 md:gap-4">
                 {placeImages.slice(1, 4).map((place, i) => (
                   <div
                     key={i}

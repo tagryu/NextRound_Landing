@@ -15,6 +15,25 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.svg",
   },
+  openGraph: {
+    title: "Next Round M&A | 실전 M&A 실무 교육",
+    description: "벤처스퀘어, 아일럼인베스트, 팩트시트가 함께하는 5주간의 실전 M&A 및 기업 매각 마스터 클래스",
+    images: [
+      {
+        url: "/assets/renewal/hero_background_optimized.jpg",
+        width: 1920,
+        height: 1200,
+        alt: "Next Round M&A",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Next Round M&A | 실전 M&A 실무 교육",
+    description: "벤처스퀘어, 아일럼인베스트, 팩트시트가 함께하는 5주간의 실전 M&A 및 기업 매각 마스터 클래스",
+    images: ["/assets/renewal/hero_background_optimized.jpg"],
+  },
 };
 
 export default function RootLayout({
