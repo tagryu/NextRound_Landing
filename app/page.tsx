@@ -509,7 +509,7 @@ export default function Home() {
               </div>
               <div className="flex-1 border border-slate-200 rounded-xl overflow-hidden min-h-[300px]">
                 <iframe
-                  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=서울+강남구+언주로+417+더체크타워&language=ko"
+                  src="https://www.google.com/maps?q=서울+강남구+언주로+417+더체크타워&output=embed&hl=ko"
                   width="100%"
                   height="100%"
                   style={{ border: 0, minHeight: '300px' }}
