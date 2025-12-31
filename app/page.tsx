@@ -9,6 +9,7 @@ export default function Home() {
   const [scrollY, setScrollY] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [selectedInstructor, setSelectedInstructor] = useState<number | null>(null);
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -55,12 +56,85 @@ export default function Home() {
   ];
 
   const instructors = [
-    { name: '명승은', role: '벤처스퀘어 대표', desc: 'M&A 생태계 및 시장 구조 전문가', image: '/assets/profile/명승은.png' },
-    { name: '지현철', role: '아일럼인베스트 대표', desc: '투자 및 인수합병 전략 자문', image: '/assets/profile/지현철.png' },
-    { name: '전명석', role: '회계사', desc: '밸류에이션 및 재무 실사 전문', image: '/assets/profile/전명석.png' },
-    { name: '함세희', role: '팩트시트 대표', desc: 'AI 기반 데이터룸 솔루션', image: '/assets/profile/함세희.png' },
-    { name: '장효준', role: '변호사', desc: 'M&A 계약 및 법률 자문', image: '/assets/profile/장효준.png' },
-    { name: '고민철', role: '심사역', desc: '딜 매칭 및 협상 전략', image: '/assets/profile/고민철.png' }
+    {
+      name: '명승은',
+      role: '벤처스퀘어 대표',
+      desc: 'M&A 생태계 및 시장 구조 전문가',
+      image: '/assets/profile/명승은.png',
+      careers: [
+        { period: '2012 - 현재', company: '벤처스퀘어', position: '대표', details: ['국내 최대 스타트업 미디어 운영', '스타트업 액셀러레이팅 및 투자'] },
+        { period: '2010 - 2012', company: '매일경제', position: '기자', details: ['IT/스타트업 전문 기자'] }
+      ]
+    },
+    {
+      name: '지현철',
+      role: '아일럼인베스트 대표',
+      desc: '투자 및 인수합병 전략 자문',
+      image: '/assets/profile/지현철.png',
+      careers: [
+        { period: '2024.12 - 현재', company: '아일럼인베스트', position: '파트너', details: [] },
+        { period: '2023.03 - 2024.11', company: '빅밴엔젤스㈜', position: '대표이사/파트너', details: [] },
+        { period: '2019.12 - 2022.12', company: '빅밴엔젤스㈜', position: '이사/파트너', details: [] },
+        { period: '2016.09 - 현재', company: '빅밴엔젤스㈜ TIPS', position: '투자심사역', details: [] },
+        { period: '2017.08 - 2019.12', company: '빅밴엔젤스㈜', position: '팀장', details: [] },
+        { period: '2016', company: '㈜퓨쳐컨설팅 TF', position: 'Co-Founder, 이사', details: ['IT SW 초 개발 자 ㈜산드라이브커뮤니케이션 Founder, CEO'] },
+        { period: '2004.1 - 현재', company: 'SI 전문 개발사 ㈜럭스비젼', position: 'Co-Founder, CSO', details: [] },
+        { period: '2002', company: '네트웍솔루션 전문업사 ㈜아이커넥티아', position: 'Co-Founder, CSO', details: [] },
+        { period: '2000', company: 'MFIS 웹에이전시', position: '실장, 대표', details: [] },
+        { period: '1998', company: 'KCC 정보산업', position: '', details: [] }
+      ]
+    },
+    {
+      name: '전명석',
+      role: '회계사',
+      desc: '밸류에이션 및 재무 실사 전문',
+      image: '/assets/profile/전명석.png',
+      careers: [
+        { period: '2015 - 현재', company: '회계법인', position: '공인회계사', details: ['M&A 재무실사(Due Diligence)', '기업가치평가(Valuation)', '스타트업 재무자문'] }
+      ]
+    },
+    {
+      name: '함세희',
+      role: '팩트시트 대표',
+      desc: 'AI 기반 데이터룸 솔루션',
+      image: '/assets/profile/함세희.png',
+      careers: [
+        { period: '2023.02 - 현재', company: '팩트시트', position: 'CEO', details: ['factsheet.biz 서비스 세일즈 총괄'] },
+        { period: '2023.02 - 현재', company: '벤처스퀘어', position: '투자담당 파트너/이사', details: ['신규 투자 스타트업 발굴 및 투자 심사', '투자조합운영'] },
+        { period: '2016.10 - 2023.05', company: '더화이트커뮤니케이션(주)', position: '전사 전략담당 임원(CSO) Cofounder', details: ['AI 교육사업 론칭 및 CloudTop, Addible 서비스 기획', '투자 유치를 위한 IR 진행 (37억 투자유치)', '오프라인사업 추진 및 오피스에어 전략 수립'] },
+        { period: '2011.07 - 2016.09', company: '아이엠캠퍼스', position: '플랫폼실 실장', details: ['웹/앱 서비스 기획 총괄', '백오피스 시스템 구축 및 운영관리'] },
+        { period: '2008.08 - 2011.05', company: 'Daum.net', position: '서비스부', details: ['리서치서비스/스 본부 검색 개발 서 상품 개발 프로젝트, TFT 참여', 'Overture, Google korea, daum.net 매체 커뮤니케이션'] }
+      ]
+    },
+    {
+      name: '장효준',
+      role: '변호사',
+      desc: 'M&A 계약 및 법률 자문',
+      image: '/assets/profile/장효준.png',
+      careers: [
+        { period: '2022 - 현재', company: '법무법인 미션 MISSION', position: '변호사', details: ['투자계약 및 M&A 자문', '스타트업 기업 일반 자문', 'IP, 콘텐츠, 미디어 자문'] },
+        { period: '2025', company: '㈜핀다', position: '파견 변호사', details: [] },
+        { period: '2025 - 현재', company: '서울소셜벤처허브', position: '전문가 멘토', details: [] },
+        { period: '2025 - 현재', company: 'DGIST', position: '창업지원 멘토', details: [] },
+        { period: '2025 - 현재', company: '초기투자엑셀러레이터협회', position: 'LIPS II 투자적절성검증위원회 위원', details: [] },
+        { period: '2024 - 현재', company: '한국여성벤처협회', position: '예비창업패키지 멘토', details: [] },
+        { period: '2022 - 2024', company: '중소벤처기업부 창업진흥원', position: '전담멘토', details: [] },
+        { period: '2023', company: '공정거래위원회', position: '가맹거래사', details: [] },
+        { period: '2024', company: '특허청', position: '변리사', details: [] }
+      ]
+    },
+    {
+      name: '고민철',
+      role: '아일럼인베스트 투자팀 팀장',
+      desc: '딜 매칭 및 협상 전략',
+      image: '/assets/profile/고민철.png',
+      careers: [
+        { period: '2025 - 현재', company: '아일럼인베스트', position: '투자팀 팀장', details: [] },
+        { period: '2023 - 2025', company: '쿠팡로지스틱스서비스', position: '전략기획 팀장', details: [] },
+        { period: '2021 - 2023', company: '쿠팡', position: '프로세스혁신팀 과장', details: [] },
+        { period: '2017 - 2019', company: '한솔섬유 베트남', position: '주재원', details: [] }
+      ]
+    }
   ];
 
   const partners = [
@@ -335,7 +409,13 @@ export default function Home() {
               >
                 {partner.logo ? (
                   <div className="w-full h-24 flex items-center justify-center mb-6">
-                    <div className={`relative ${partner.name === '팩트시트' ? 'h-32 w-full max-w-[280px]' : 'h-16 w-full max-w-[200px]'}`}>
+                    <div className={`relative ${
+                      partner.name === '팩트시트'
+                        ? 'h-40 w-full max-w-[320px] mt-4'
+                        : partner.name === '아일럼인베스트'
+                          ? 'h-24 w-full max-w-[280px] mt-3'
+                          : 'h-16 w-full max-w-[200px]'
+                    }`}>
                       <Image
                         src={partner.logo}
                         alt={partner.name}
@@ -372,7 +452,8 @@ export default function Home() {
             {instructors.map((instructor, index) => (
               <div
                 key={index}
-                className="relative bg-white rounded-2xl overflow-hidden hover:shadow-xl transition-all group"
+                className="relative bg-white rounded-2xl overflow-hidden hover:shadow-xl transition-all group cursor-pointer"
+                onClick={() => setSelectedInstructor(index)}
               >
                 {/* Logo in top right */}
                 <div className="absolute top-2 right-2 md:top-3 md:right-3 z-20">
@@ -753,6 +834,99 @@ export default function Home() {
           </div>
         </footer>
       </section>
+
+      {/* Instructor Profile Modal */}
+      {selectedInstructor !== null && (
+        <div
+          className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4"
+          onClick={() => setSelectedInstructor(null)}
+        >
+          <div
+            className="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* 모달 헤더 */}
+            <div className="relative bg-gradient-to-b from-sky-50 via-blue-100 to-blue-400 p-6 rounded-t-2xl">
+              <button
+                onClick={() => setSelectedInstructor(null)}
+                className="absolute top-4 right-4 w-8 h-8 bg-white/80 hover:bg-white rounded-full flex items-center justify-center transition-colors"
+              >
+                <X size={18} className="text-slate-700" />
+              </button>
+
+              <div className="flex flex-col md:flex-row items-center gap-6">
+                {/* 프로필 이미지 */}
+                <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden bg-white shadow-lg">
+                  <Image
+                    src={instructors[selectedInstructor].image}
+                    alt={instructors[selectedInstructor].name}
+                    fill
+                    className="object-cover object-top"
+                    unoptimized
+                  />
+                </div>
+
+                {/* 기본 정보 */}
+                <div className="text-center md:text-left">
+                  <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-1">
+                    {instructors[selectedInstructor].name}
+                  </h3>
+                  <p className="text-blue-600 font-semibold mb-2">
+                    {instructors[selectedInstructor].role}
+                  </p>
+                  <p className="text-slate-600">
+                    {instructors[selectedInstructor].desc}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* 경력 테이블 */}
+            <div className="p-6">
+              <h4 className="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2">
+                <Briefcase size={20} className="text-blue-600" />
+                경력사항
+              </h4>
+
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b-2 border-slate-200">
+                      <th className="text-left py-3 px-2 text-slate-600 font-semibold w-32">기간</th>
+                      <th className="text-left py-3 px-2 text-slate-600 font-semibold">경력내용</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {instructors[selectedInstructor].careers.map((career, idx) => (
+                      <tr key={idx} className="border-b border-slate-100">
+                        <td className="py-3 px-2 text-slate-500 align-top whitespace-nowrap">
+                          {career.period}
+                        </td>
+                        <td className="py-3 px-2">
+                          <div className="font-semibold text-slate-900">
+                            {career.company}
+                          </div>
+                          <div className="text-blue-600 text-xs mb-1">
+                            {career.position}
+                          </div>
+                          <ul className="text-slate-600 text-xs space-y-0.5">
+                            {career.details.map((detail, i) => (
+                              <li key={i} className="flex items-start gap-1">
+                                <span className="text-blue-400 mt-1">•</span>
+                                {detail}
+                              </li>
+                            ))}
+                          </ul>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
