@@ -55,12 +55,12 @@ export default function Home() {
   ];
 
   const instructors = [
-    { name: '명승은', role: '벤처스퀘어 대표', desc: 'M&A 생태계 및 시장 구조 전문가', image: null },
-    { name: '지현철', role: '아일럼인베스트 대표', desc: '투자 및 인수합병 전략 자문', image: null },
-    { name: '전명석', role: '회계사', desc: '밸류에이션 및 재무 실사 전문', image: null },
+    { name: '명승은', role: '벤처스퀘어 대표', desc: 'M&A 생태계 및 시장 구조 전문가', image: '/assets/profile/명승은.png' },
+    { name: '지현철', role: '아일럼인베스트 대표', desc: '투자 및 인수합병 전략 자문', image: '/assets/profile/지현철.png' },
+    { name: '전명석', role: '회계사', desc: '밸류에이션 및 재무 실사 전문', image: '/assets/profile/전명석.png' },
     { name: '함세희', role: '팩트시트 대표', desc: 'AI 기반 데이터룸 솔루션', image: '/assets/profile/함세희.png' },
-    { name: '장효준', role: '변호사', desc: 'M&A 계약 및 법률 자문', image: null },
-    { name: '고민철', role: '심사역', desc: '딜 매칭 및 협상 전략', image: null }
+    { name: '장효준', role: '변호사', desc: 'M&A 계약 및 법률 자문', image: '/assets/profile/장효준.png' },
+    { name: '고민철', role: '심사역', desc: '딜 매칭 및 협상 전략', image: '/assets/profile/고민철.png' }
   ];
 
   const partners = [
@@ -139,11 +139,35 @@ export default function Home() {
           <div className="text-xl font-bold tracking-tight">
             Next Round <span className="text-blue-600">M&A</span>
           </div>
+
+          <div className="hidden md:flex items-center gap-8">
+            <a href="#curriculum" className="text-slate-700 hover:text-blue-600 font-medium text-sm transition-colors">
+              커리큘럼
+            </a>
+            <a href="#instructors" className="text-slate-700 hover:text-blue-600 font-medium text-sm transition-colors">
+              강사진
+            </a>
+            <a href="#venue" className="text-slate-700 hover:text-blue-600 font-medium text-sm transition-colors">
+              교육장소
+            </a>
+            <a href="#pricing" className="text-slate-700 hover:text-blue-600 font-medium text-sm transition-colors">
+              가격
+            </a>
+            <a
+              href="https://event-us.kr"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-full text-sm transition-all shadow-md hover:shadow-lg"
+            >
+              교육 신청하기
+            </a>
+          </div>
+
           <a
             href="https://event-us.kr"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-full text-sm transition-all shadow-md hover:shadow-lg"
+            className="md:hidden px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-full text-sm transition-all shadow-md hover:shadow-lg"
           >
             교육 신청하기
           </a>
@@ -151,50 +175,58 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/assets/renewal/hero_background.png"
+            alt="Background"
+            fill
+            className="object-cover"
+            priority
+            unoptimized
+          />
+        </div>
+
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center pt-20">
-          <div className="inline-block px-4 py-2 border border-blue-500/30 bg-blue-500/10 rounded-full text-blue-700 font-semibold text-sm mb-4">
+          <div className="inline-block px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-white text-sm mb-8">
             2025년 1월 14일 개강 · 5주 과정
           </div>
 
-          <h1 className="text-6xl md:text-8xl font-black leading-tight mb-6 mt-0">
-            <span className="inline-block transform hover:scale-105 transition-transform duration-300">
-              <span className="text-slate-900">Next Round</span>
-            </span>
-            <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600">
-              M&A
-            </span>
+          <h1 className="text-5xl md:text-7xl font-black leading-tight mb-6 text-white">
+            Next Round M&A
           </h1>
 
-          <p className="text-xl md:text-2xl text-slate-700 mb-4 leading-relaxed">
+          <p className="text-lg md:text-xl text-white/90 mb-4 leading-relaxed">
             실제 케이스 스터디와 실습으로 배우는
-            <br />
+          </p>
+          <p className="text-lg md:text-xl text-white/90 mb-10 leading-relaxed">
             M&A 실무 교육 프로그램
           </p>
 
-          <p className="text-slate-600 mb-10">
+          <p className="text-white/70 text-sm mb-12">
             매수자와 매도자 모두를 위한 전문가 네트워크
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-20">
             <a
-              href="#apply"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-full text-lg transition-all shadow-lg shadow-blue-600/30"
+              href="https://event-us.kr"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-full text-base transition-all shadow-lg"
             >
               교육 신청하기
-              <ArrowRight size={20} />
             </a>
             <a
               href="#curriculum"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white hover:bg-slate-50 text-slate-900 font-semibold rounded-full text-lg border-2 border-slate-200 transition-all"
+              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white font-semibold rounded-full text-base border border-white/30 transition-all"
             >
               커리큘럼 보기
             </a>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            <div className="h-32 flex items-center justify-center">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
+            <div className="h-20 flex items-center justify-center">
               <div className="relative h-12 w-48">
                 <Image
                   src="/assets/logo/VentureSquare_Ci.png"
@@ -205,13 +237,13 @@ export default function Home() {
                 />
               </div>
             </div>
-            <div className="h-32 flex items-center justify-center">
-              <span className="text-base text-slate-700 font-medium">
+            <div className="h-20 flex items-center justify-center">
+              <span className="text-base text-white font-medium">
                 아일럼인베스트
               </span>
             </div>
-            <div className="h-32 flex items-center justify-center">
-              <div className="relative h-32 w-96">
+            <div className="h-20 flex items-center justify-center">
+              <div className="relative h-32 w-56">
                 <Image
                   src="/assets/logo/FactSheet_Ci.png"
                   alt="팩트시트"
@@ -320,7 +352,7 @@ export default function Home() {
       </section>
 
       {/* Instructors Section */}
-      <section className="py-24 bg-white">
+      <section id="instructors" className="py-24 bg-gradient-to-b from-slate-50 to-white">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
             <span className="text-blue-600 text-sm font-semibold uppercase tracking-widest">Instructors</span>
@@ -334,28 +366,46 @@ export default function Home() {
             {instructors.map((instructor, index) => (
               <div
                 key={index}
-                className="p-6 bg-white border border-slate-200 rounded-2xl text-center hover:border-blue-300 hover:shadow-xl transition-all"
+                className="relative bg-white rounded-2xl overflow-hidden hover:shadow-xl transition-all group"
               >
-                {instructor.image ? (
-                  <div className="w-full h-48 mb-4 flex items-end justify-center">
-                    <div className="relative w-40 h-48">
-                      <Image
-                        src={instructor.image}
-                        alt={instructor.name}
-                        fill
-                        className="object-contain object-bottom"
-                        unoptimized
-                      />
-                    </div>
+                {/* Logo in top right */}
+                <div className="absolute top-3 right-3 z-20">
+                  <span className="text-[10px] font-bold text-slate-700">Next Round <span className="text-blue-600">M&A</span></span>
+                </div>
+
+                {/* Gradient Background Section */}
+                <div className="relative bg-gradient-to-b from-sky-50 via-blue-100 to-blue-600 h-48 overflow-hidden">
+                  {/* Large White Circle Background */}
+                  <div className="absolute top-20 left-1/2 -translate-x-1/2 w-80 h-80 bg-white rounded-full z-0"></div>
+
+                  {/* Profile Image */}
+                  <div className="relative z-10 pt-2 px-0 h-full flex items-end justify-center">
+                    {instructor.image ? (
+                      <div className="w-full h-44">
+                        <div className="relative w-full h-full">
+                          <Image
+                            src={instructor.image}
+                            alt={instructor.name}
+                            fill
+                            className="object-contain object-bottom"
+                            unoptimized
+                          />
+                        </div>
+                      </div>
+                    ) : (
+                      <div className="w-28 h-28 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full mx-auto flex items-center justify-center text-3xl font-bold text-white shadow-lg">
+                        {instructor.name.charAt(0)}
+                      </div>
+                    )}
                   </div>
-                ) : (
-                  <div className="w-24 h-24 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full mx-auto mb-4 flex items-center justify-center text-3xl font-bold text-white shadow-lg">
-                    {instructor.name.charAt(0)}
-                  </div>
-                )}
-                <h3 className="text-xl font-bold mb-1 text-slate-900">{instructor.name}</h3>
-                <p className="text-blue-600 text-sm mb-3 font-semibold">{instructor.role}</p>
-                <p className="text-slate-600 text-sm">{instructor.desc}</p>
+                </div>
+
+                {/* Info Section - White Background */}
+                <div className="bg-white pt-4 pb-5 px-5 text-center">
+                  <h3 className="text-xl font-bold mb-1 text-slate-900">{instructor.name}</h3>
+                  <p className="text-blue-600 text-sm mb-1 font-semibold">{instructor.role}</p>
+                  <p className="text-slate-600 text-sm leading-relaxed">{instructor.desc}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -440,7 +490,7 @@ export default function Home() {
       </section>
 
       {/* Venue Section */}
-      <section className="py-24 bg-white">
+      <section id="venue" className="py-24 bg-white">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
             <span className="text-blue-600 text-sm font-semibold uppercase tracking-widest">Venue</span>
@@ -491,8 +541,41 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Pricing Section */}
+      <section id="pricing" className="py-24 bg-white">
+        <div className="max-w-3xl mx-auto px-6">
+          <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-3xl p-10 md:p-16 text-center border border-blue-100">
+            <div className="inline-block px-4 py-1.5 bg-red-500 text-white rounded-full text-sm font-semibold mb-6">
+              1기 특별 할인
+            </div>
+
+            <div className="mb-8">
+              <div className="text-slate-500 text-base mb-3">
+                <span className="line-through">정상가 2,500,000원</span>
+              </div>
+              <div className="text-6xl md:text-7xl font-black text-slate-900 mb-3">
+                1,500,000<span className="text-4xl">원</span>
+              </div>
+              <div className="text-slate-600">
+                VAT 별도
+              </div>
+            </div>
+
+            <a
+              href="https://event-us.kr"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-12 py-5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-full text-lg transition-all shadow-lg hover:shadow-xl hover:scale-105"
+            >
+              교육 신청하기
+              <ArrowRight size={22} />
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ Section */}
-      <section className="py-24 bg-slate-50">
+      <section className="py-24 bg-white">
         <div className="max-w-3xl mx-auto px-6">
           <div className="text-center mb-16">
             <span className="text-blue-600 text-sm font-semibold uppercase tracking-widest">FAQ</span>
