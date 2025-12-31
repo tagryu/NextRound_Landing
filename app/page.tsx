@@ -731,17 +731,17 @@ export default function Home() {
         </div>
 
         {/* Footer 영역 */}
-        <footer className="relative z-10 py-8 border-t border-slate-800">
+        <footer className="relative z-10 py-8 bg-slate-800/80">
           <div className="max-w-6xl mx-auto px-6 text-center">
             <div className="text-lg font-bold mb-3 text-white">
               Next Round <span className="text-blue-400">M&A</span>
             </div>
 
-            <div className="text-slate-500 text-sm mb-2">
+            <div className="text-slate-400 text-sm mb-2">
               벤처스퀘어 · 아일럼인베스트 · 팩트시트
             </div>
 
-            <div className="text-slate-600 text-sm">
+            <div className="text-slate-500 text-sm">
               © 2025 Next Round M&A. All rights reserved.
             </div>
           </div>
