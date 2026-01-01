@@ -537,9 +537,17 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
             <span className="text-blue-600 text-sm font-semibold uppercase tracking-widest">Curriculum</span>
-            <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 text-slate-900">5주 완성 커리큘럼</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 text-slate-900">5주 완성 커리큘럼 + 넥스트라운드 성장 포럼 멤버십</h2>
             <p className="text-slate-600 max-w-2xl mx-auto text-lg">
-              매주 수요일 저녁, 이론과 실습을 병행하는 체계적인 M&A 교육
+              매주 수요일 오후, 이론과 실습, 실제 사례 연구를 병행하는 체계적인 커리큘럼
+            </p>
+          </div>
+
+          {/* 특별 안내 */}
+          <div className="max-w-4xl mx-auto mb-12 p-6 bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 rounded-2xl">
+            <p className="text-center text-amber-800 font-semibold">
+              💡 매출 30억 이상, 이익률 15% 이상, 기술 보유 스타트업의 경우 적극 지원 바람.<br />
+              <span className="text-amber-900">강사진이 실제 인수 대상 물색중.</span>
             </p>
           </div>
 
