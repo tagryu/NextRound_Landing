@@ -62,57 +62,75 @@ export default function Home() {
       desc: 'M&A 생태계 및 시장 구조 전문가',
       image: '/assets/profile/명승은.png',
       careers: [
-        { period: '2012 - 현재', company: '벤처스퀘어', position: '대표', details: ['국내 최대 스타트업 미디어 운영', '스타트업 액셀러레이팅 및 투자'] },
-        { period: '2010 - 2012', company: '매일경제', position: '기자', details: ['IT/스타트업 전문 기자'] }
+        { period: '현재', company: '벤처스퀘어', position: '대표이사', details: [] },
+        { period: '현재', company: '(사)한국초기투자기관협회(KESIA)', position: '부회장', details: [] },
+        { period: '전', company: '경희사이버대학교', position: '미디어커뮤니케이션학과 겸임교수', details: [] },
+        { period: '전', company: '티엔엠미디어', position: '공동대표', details: [] },
+        { period: '전', company: '한국블로그산업협회', position: '회장', details: [] },
+        { period: '전', company: '야후 코리아', position: '네트워크 프로그래밍 팀장', details: [] },
+        { period: '전', company: '매경인터넷', position: '디지털미디어전략 기자', details: [] },
+        { period: '전', company: '씨넷코리아/지디넷코리아', position: '편집장', details: [] },
+        { period: '전', company: '하우피씨/아하피씨/피씨플러스', position: '팀장', details: [] },
+        { period: '2018', company: '인터넷에코어워드', position: '언론분야 대상', details: [] },
+        { period: '2017', company: '제54회 무역의 날', position: '산업통상자원부 장관 표창', details: [] },
+        { period: '2015', company: '경기도 문화콘텐츠산업', position: '발전 유공 경기도지사 표창장', details: [] },
+        { period: '2015', company: '미래창조과학부', position: '대한민국창조경제대상 공헌 부문 단체상', details: [] }
       ]
     },
     {
       name: '지현철',
-      role: '아일럼인베스트 대표',
+      role: '아일럼인베스트 파트너',
       desc: '투자 및 인수합병 전략 자문',
       image: '/assets/profile/지현철.png',
       careers: [
         { period: '2024.12 - 현재', company: '아일럼인베스트', position: '파트너', details: [] },
-        { period: '2023.03 - 2024.11', company: '빅밴엔젤스㈜', position: '대표이사/파트너', details: [] },
-        { period: '2019.12 - 2022.12', company: '빅밴엔젤스㈜', position: '이사/파트너', details: [] },
-        { period: '2016.09 - 현재', company: '빅밴엔젤스㈜ TIPS', position: '투자심사역', details: [] },
-        { period: '2017.08 - 2019.12', company: '빅밴엔젤스㈜', position: '팀장', details: [] },
-        { period: '2016', company: '㈜퓨쳐컨설팅 TF', position: 'Co-Founder, 이사', details: ['IT SW 초 개발 자 ㈜산드라이브커뮤니케이션 Founder, CEO'] },
-        { period: '2004.1 - 현재', company: 'SI 전문 개발사 ㈜럭스비젼', position: 'Co-Founder, CSO', details: [] },
-        { period: '2002', company: '네트웍솔루션 전문업사 ㈜아이커넥티아', position: 'Co-Founder, CSO', details: [] },
-        { period: '2000', company: 'MFIS 웹에이전시', position: '실장, 대표', details: [] },
-        { period: '1998', company: 'KCC 정보산업', position: '', details: [] }
+        { period: '2023.03 - 2024.11', company: '빅뱅엔젤스㈜', position: '대표이사/파트너', details: ['총 펀드 관리 규모 250억원 핵심운용인력', '89개사 발굴 투자'] },
+        { period: '2019.12 - 2022.12', company: '빅뱅엔젤스㈜', position: '이사/파트너', details: [] },
+        { period: '2016.09 - 현재', company: '빅뱅엔젤스㈜ TIPS', position: '투자심사역', details: [] },
+        { period: '2016', company: '㈜재무컨설팅 TF', position: 'Co-Founder, 이사', details: [] },
+        { period: '2009', company: '㈜쓰리제이커뮤니케이션', position: 'Founder, CEO', details: ['IT SW 전문 개발사'] },
+        { period: '2004', company: '㈜픽스바이트', position: 'Co-Founder, CSO', details: ['SI 전문 개발사'] },
+        { period: '2002', company: '㈜이카디아', position: 'Co-Founder, CSO', details: ['네트워크보안 전문회사'] },
+        { period: '2000', company: 'MFIS 웹에이전시', position: '설립, 대표', details: [] },
+        { period: '1998', company: 'KCC 정보통신', position: '대리', details: [] }
       ]
     },
     {
       name: '전명석',
-      role: '회계사',
+      role: '정동회계법인 Director',
       desc: '밸류에이션 및 재무 실사 전문',
       image: '/assets/profile/전명석.png',
       careers: [
-        { period: '2015 - 현재', company: '회계법인', position: '공인회계사', details: ['M&A 재무실사(Due Diligence)', '기업가치평가(Valuation)', '스타트업 재무자문'] }
+        { period: '2024.12 - 현재', company: '정동회계법인', position: 'Director', details: [] },
+        { period: '2021.05 - 2024.12', company: '삼일회계법인', position: 'Deals, FDD, Valuation 및 CF', details: [] },
+        { period: '2018.09 - 2021.04', company: '삼일회계법인', position: 'International Tax Services 본부', details: [] },
+        { period: '2011 - 2018', company: '성균관대학교', position: '글로벌 경제학과 졸업', details: [] },
+        { period: 'Deals', company: '매각/매수자문', position: '', details: ['Cross-border 인수자문 (인도시장 정수기업체)', '성인교육업체, 정보보안업체, 네트워크 솔루션 업체 등 자문', '스튜디오레논 인수자문, 명품 플랫폼 투자유치 자문', '2차전지, 반도체, 원자력 기자재 등 다수 업체 자문'] },
+        { period: 'Deals', company: '재무실사 및 기업가치평가', position: '', details: ['에듀윌, 보령바이오파마 매수실사 및 기업가치평가', '키다리엔터테인먼트(바이트댄스), 브랜뉴뮤직(카카오엔터) 매수실사', '무신사 영업권 손상 평가, 가상자산플랫폼 밸류에이션'] },
+        { period: 'Tax', company: 'Tax Due Diligence', position: '', details: ['SKC코오롱PI, 대우조선해양, 에어아시아 세무실사'] },
+        { period: 'Audit', company: '회계감사', position: '', details: ['수성웹툰, 투믹스홀딩스 회계감사', '에스알(SRT) 내부회계 평가'] }
       ]
     },
     {
       name: '함세희',
-      role: '팩트시트 대표',
+      role: '팩트시트 CEO',
       desc: 'AI 기반 데이터룸 솔루션',
       image: '/assets/profile/함세희.png',
       careers: [
-        { period: '2023.02 - 현재', company: '팩트시트', position: 'CEO', details: ['factsheet.biz 서비스 세일즈 총괄'] },
-        { period: '2023.02 - 현재', company: '벤처스퀘어', position: '투자담당 파트너/이사', details: ['신규 투자 스타트업 발굴 및 투자 심사', '투자조합운영'] },
-        { period: '2016.10 - 2023.05', company: '더화이트커뮤니케이션(주)', position: '전사 전략담당 임원(CSO) Cofounder', details: ['AI 교육사업 론칭 및 CloudTop, Addible 서비스 기획', '투자 유치를 위한 IR 진행 (37억 투자유치)', '오프라인사업 추진 및 오피스에어 전략 수립'] },
-        { period: '2011.07 - 2016.09', company: '아이엠캠퍼스', position: '플랫폼실 실장', details: ['웹/앱 서비스 기획 총괄', '백오피스 시스템 구축 및 운영관리'] },
-        { period: '2008.08 - 2011.05', company: 'Daum.net', position: '서비스부', details: ['리서치서비스/스 본부 검색 개발 서 상품 개발 프로젝트, TFT 참여', 'Overture, Google korea, daum.net 매체 커뮤니케이션'] }
+        { period: '2023.02 - 현재', company: '㈜팩트시트', position: 'CEO', details: ['factsheet.biz 서비스 세일즈 총괄'] },
+        { period: '2023.02 - 현재', company: '㈜벤처스퀘어', position: '투자담당 파트너/이사', details: ['신규 투자 스타트업 발굴 및 투자 심사', '보육기업 멘토링 및 컨설팅', '투자조합운영'] },
+        { period: '2016.10 - 2023.05', company: '더화이트커뮤니케이션㈜', position: '전사 전략담당 임원(CSO) Cofounder', details: ['AI 오퍼레이션 솔루션 CloudGate 서비스 기획', '신규 클라이언트 확대 (연 300% 성장)', '투자 유치를 위한 IR 진행 (370억 투자유치)', '서비스 제휴 및 M&A'] },
+        { period: '2011.07 - 2016.09', company: '㈜위메프', position: '플랫폼실 실장', details: ['위메프 서비스 기획 관리', '위메프 APP & 모바일web 기획 런칭', '백오피스 시스템 구축 및 운영관리'] },
+        { period: '2004.08 - 2011.05', company: '㈜나무커뮤니케이션', position: '사업부장', details: ['Daum.net 검색광고 상품 개편 프로젝트 참여', 'Overture, Google korea, daum.net 매체 커뮤니케이션'] }
       ]
     },
     {
       name: '장효준',
-      role: '변호사',
+      role: '법무법인 미션 변호사',
       desc: 'M&A 계약 및 법률 자문',
       image: '/assets/profile/장효준.png',
       careers: [
-        { period: '2022 - 현재', company: '법무법인 미션 MISSION', position: '변호사', details: ['투자계약 및 M&A 자문', '스타트업 기업 일반 자문', 'IP, 콘텐츠, 미디어 자문'] },
+        { period: '2022 - 현재', company: '법무법인 미션 MISSION', position: '변호사', details: [] },
         { period: '2025', company: '㈜핀다', position: '파견 변호사', details: [] },
         { period: '2025 - 현재', company: '서울소셜벤처허브', position: '전문가 멘토', details: [] },
         { period: '2025 - 현재', company: 'DGIST', position: '창업지원 멘토', details: [] },
@@ -120,7 +138,11 @@ export default function Home() {
         { period: '2024 - 현재', company: '한국여성벤처협회', position: '예비창업패키지 멘토', details: [] },
         { period: '2022 - 2024', company: '중소벤처기업부 창업진흥원', position: '전담멘토', details: [] },
         { period: '2023', company: '공정거래위원회', position: '가맹거래사', details: [] },
-        { period: '2024', company: '특허청', position: '변리사', details: [] }
+        { period: '2024', company: '특허청', position: '변리사', details: [] },
+        { period: '업무', company: '투자계약 및 M&A', position: '', details: ['RCPS 투자 Term Sheet 및 투자계약서 검토', 'Cross-border M&A deal 자문 (미국 게임회사 등)', '헬스케어, 소비재 스타트업 법률실사(LDD) 자문', '다수의 기업 투자, M&A, 법률실사 자문'] },
+        { period: '업무', company: '스타트업 기업 일반', position: '', details: ['전자금융거래법, 전자상거래법 자문', '공정거래법, 약관규제법 자문', '기술이전계약, 독점공급계약 등 자문', '정관, 임원보수규정, 영업비밀관리규정 등 내규 자문'] },
+        { period: '업무', company: 'IP, 콘텐츠, 미디어', position: '', details: ['영업비밀 침해 사건 형사 고소 및 민사 가처분 대리', '상표권 및 저작권 침해 관련 자문', '광고/출연/음원 제작 및 유통 계약 자문'] },
+        { period: '업무', company: 'AI, 가상화폐 등', position: '', details: ['버츄얼 휴먼 스타트업 계약 자문', '가상화폐 및 NFT 서비스 운영 자문', '가상화폐 SaaS 기업 소송 대리'] }
       ]
     },
     {
@@ -132,7 +154,13 @@ export default function Home() {
         { period: '2025 - 현재', company: '아일럼인베스트', position: '투자팀 팀장', details: [] },
         { period: '2023 - 2025', company: '쿠팡로지스틱스서비스', position: '전략기획 팀장', details: [] },
         { period: '2021 - 2023', company: '쿠팡', position: '프로세스혁신팀 과장', details: [] },
-        { period: '2017 - 2019', company: '한솔섬유 베트남', position: '주재원', details: [] }
+        { period: '2017 - 2019', company: '한솔섬유 베트남', position: '주재원', details: [] },
+        { period: '학력', company: '서울대학교', position: '경영전문대학원 졸업', details: [] },
+        { period: '학력', company: '연세대학교', position: '국어국문학과 졸업', details: [] },
+        { period: '업무', company: '온라인 교육기업 인수 검토 및 실사', position: '', details: ['온라인 교육 기업 인수 관련 사업, 재무, 조직 전반 실사', '투자 타당성 검토 및 투자위원회 보고용 IM 작성', 'FDD(재무실사) 및 LDD(법률실사) 총괄'] },
+        { period: '업무', company: '테크 기반 스타트업 M&A 검토', position: '', details: ['SaaS, AI 기반 스타트업 대상 투자 및 M&A 검토', '투자 구조 설계 및 전략적 시너지 분석', '피투자사 경영진 미팅 및 투자 조건 협의'] },
+        { period: '업무', company: '중소·중견기업 매도자문', position: '', details: ['상장사 및 비상장사 기업 매각/투자 유치 자문', '매각 가치 극대화 위한 거래 조건 협의', '딜 클로징 전 과정 프로젝트 매니지먼트'] },
+        { period: '업무', company: '부동산 개발 프로젝트 자문', position: '', details: ['복합 부동산 개발 수익증권 매각 구조 검토', '사업비, 수익 배분 구조 분석', '자산운용사 및 투자자 대상 커뮤니케이션'] }
       ]
     }
   ];
@@ -810,8 +838,8 @@ export default function Home() {
 
             <p className="mt-8 text-slate-400 text-sm">
               문의:{' '}
-              <a href="mailto:edu@venturesquare.net" className="text-white hover:underline">
-                edu@venturesquare.net
+              <a href="mailto:mna@factsheet.biz" className="text-white hover:underline">
+                mna@factsheet.biz
               </a>
             </p>
           </div>
