@@ -173,19 +173,24 @@ export default function Home() {
 
   const targetAudience = [
     {
-      icon: Building2,
-      title: '매각 의지가 있는 CEO',
-      desc: '기업 가치를 극대화하고 성공적인 Exit을 준비하는 창업자'
+      icon: TrendingUp,
+      title: '인수 기업 탐색 투자자',
+      desc: '인수하기 좋은 기업을 실제로 탐색하는 방법을 배우고 싶은 투자자'
     },
     {
       icon: Briefcase,
-      title: 'M&A 담당 실무자',
-      desc: '기업 또는 전략적 인수합병을 담당하는 실무 전문가'
+      title: '후속투자·M&A 전략 리더',
+      desc: '후속투자 유치, 인수합병 실전 전략을 파악하고 싶은 리더'
     },
     {
-      icon: TrendingUp,
-      title: 'M&A 중계 투자자 (LP)',
-      desc: '포트폴리오 Exit 및 딜 소싱에 관심 있는 투자자'
+      icon: Building2,
+      title: '전략적 성장 CEO',
+      desc: '인수합병을 통한 전략적 성장을 꾀하는 CEO'
+    },
+    {
+      icon: Users,
+      title: '투자 심사역·액셀러레이터',
+      desc: '투자 포트폴리오의 성장을 돕는 투자 심사역, 액셀러레이터, 엔젤 투자자'
     }
   ];
 
@@ -239,7 +244,7 @@ export default function Home() {
       >
         <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
           <div className="text-xl font-bold tracking-tight">
-            Next Round <span className="text-blue-600">M&A</span>
+            Next Round <span className="text-blue-600">Class</span>
           </div>
 
           <div className="hidden md:flex items-center gap-8">
@@ -296,18 +301,18 @@ export default function Home() {
           </div>
 
           <h1 className="text-5xl md:text-7xl font-black leading-tight mb-6 text-white">
-            Next Round M&A
+            Next Round Class
           </h1>
 
           <p className="text-lg md:text-xl text-white/90 mb-4 leading-relaxed">
-            실제 케이스 스터디와 실습으로 배우는
+            실제 투자 및 M&A 사례와 실습으로 배우는
           </p>
           <p className="text-lg md:text-xl text-white/90 mb-10 leading-relaxed">
-            M&A 실무 교육 프로그램
+            후속투자와 M&A, EXIT 실전 전략
           </p>
 
           <p className="text-white/70 text-sm mb-12">
-            매수자와 매도자 모두를 위한 전문가 네트워크
+            투자자, 창업자, 심사역 모두를 위한 전문가 네트워크
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-20">
@@ -370,10 +375,10 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
             <span className="text-blue-600 text-sm font-semibold uppercase tracking-widest">Target Audience</span>
-            <h2 className="text-4xl md:text-5xl font-bold mt-4 text-slate-900">이런 분들을 위한 교육입니다</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mt-4 text-slate-900">이런 분들이 함께 합니다!</h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {targetAudience.map((item, index) => (
               <div
                 key={index}
