@@ -23,35 +23,40 @@ export default function Home() {
       date: '1/14',
       title: '후속 투자 유치 및 인수합병 시장과 구조 이해',
       contents: ['M&A Class 취지 및 방안', 'M&A 생태계, 매수·매도자의 역할, 실제 성공사례'],
-      instructors: ['명승은 대표', '지현철 대표']
+      instructors: ['명승은 대표', '지현철 대표'],
+      instructorIndices: [0, 1]
     },
     {
       week: 2,
       date: '1/21',
       title: '딜 구조 설계 & 가치평가',
       contents: ['밸류에이션 실습, 거래 프로세스 시뮬레이션', '팩트시트 데이터룸 활용법'],
-      instructors: ['전명석 회계사', '함세희 대표']
+      instructors: ['전명석 회계사', '함세희 대표'],
+      instructorIndices: [2, 3]
     },
     {
       week: 3,
       date: '1/28',
       title: '법률·세무 및 리스크 관리',
       contents: ['계약서(LOI, SPA) 작성 및 리스크 대응'],
-      instructors: ['장효준 변호사']
+      instructors: ['장효준 변호사'],
+      instructorIndices: [4]
     },
     {
       week: 4,
       date: '2/4',
       title: '매칭 시뮬레이션 & 협상 실습',
       contents: ['매수자-매도자 실시간 매칭 협상 및 피칭'],
-      instructors: ['고민철 심사역']
+      instructors: ['고민철 심사역'],
+      instructorIndices: [5]
     },
     {
       week: 5,
       date: '2/11',
       title: 'Deal Case Study',
       contents: ['실제 M&A 사례, 인사이드'],
-      instructors: ['전문가 패널']
+      instructors: ['전문가 패널'],
+      instructorIndices: []
     }
   ];
 
@@ -64,6 +69,10 @@ export default function Home() {
       careers: [
         { period: '현재', company: '벤처스퀘어', position: '대표이사', details: [] },
         { period: '현재', company: '(사)한국초기투자기관협회(KESIA)', position: '부회장', details: [] },
+        { period: '경력', company: 'IT전문 기자/편집장', position: '10년', details: [] },
+        { period: '경력', company: '파워블로거', position: '12년, 누적 1300만 방문자', details: [] },
+        { period: '경력', company: '창업기획자', position: '13년+a, 1000여개 스타트업 보육', details: [] },
+        { period: '경력', company: '전문투자자', position: '10년+a, 187+a개 사, 220억원', details: [] },
         { period: '전', company: '경희사이버대학교', position: '미디어커뮤니케이션학과 겸임교수', details: [] },
         { period: '전', company: '티엔엠미디어', position: '공동대표', details: [] },
         { period: '전', company: '한국블로그산업협회', position: '회장', details: [] },
@@ -537,17 +546,14 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
             <span className="text-blue-600 text-sm font-semibold uppercase tracking-widest">Curriculum</span>
-            <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 text-slate-900">5주 완성 커리큘럼 + 넥스트라운드 성장 포럼 멤버십</h2>
-            <p className="text-slate-600 max-w-2xl mx-auto text-lg">
+            <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-2 text-slate-900">5주 완성 커리큘럼</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-slate-900">+ 넥스트라운드 성장 포럼 멤버십</h2>
+            <p className="text-slate-600 max-w-2xl mx-auto text-lg mb-4">
               매주 수요일 오후, 이론과 실습, 실제 사례 연구를 병행하는 체계적인 커리큘럼
             </p>
-          </div>
-
-          {/* 특별 안내 */}
-          <div className="max-w-4xl mx-auto mb-12 p-6 bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 rounded-2xl">
-            <p className="text-center text-amber-800 font-semibold">
+            <p className="text-orange-600 max-w-2xl mx-auto text-base font-medium">
               💡 매출 30억 이상, 이익률 15% 이상, 기술 보유 스타트업의 경우 적극 지원 바람.<br />
-              <span className="text-amber-900">강사진이 실제 인수 대상 물색중.</span>
+              강사진이 실제 인수 대상 물색중.
             </p>
           </div>
 
@@ -604,6 +610,41 @@ export default function Home() {
                     ))}
                   </div>
                 </div>
+
+                {/* 강사 이미지 */}
+                {item.instructorIndices.length > 0 && (
+                  <div className="flex items-center gap-3 flex-shrink-0">
+                    {item.instructorIndices.map((instructorIdx, i) => (
+                      <div
+                        key={i}
+                        className="group relative cursor-pointer"
+                        onClick={() => setSelectedInstructor(instructorIdx)}
+                      >
+                        {/* 외곽 링 */}
+                        <div className="absolute -inset-1 bg-gradient-to-br from-blue-400 via-indigo-500 to-purple-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm" />
+                        <div className="absolute -inset-0.5 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-full opacity-70 group-hover:opacity-100 transition-opacity" />
+
+                        {/* 이미지 컨테이너 */}
+                        <div className="relative w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden bg-gradient-to-b from-sky-50 via-blue-50 to-blue-200 ring-2 ring-white shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
+                          <Image
+                            src={instructors[instructorIdx].image}
+                            alt={instructors[instructorIdx].name}
+                            fill
+                            className="object-cover object-top"
+                            unoptimized
+                          />
+                        </div>
+
+                        {/* 이름 툴팁 */}
+                        <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                          <span className="text-xs font-medium text-slate-700 bg-white px-2 py-0.5 rounded-full shadow-sm border border-slate-100">
+                            {instructors[instructorIdx].name}
+                          </span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
               </div>
 
               <div className="mt-3 pt-3 border-t border-slate-200 flex items-center gap-2 text-slate-600 text-xs">
@@ -695,32 +736,93 @@ export default function Home() {
             <h2 className="text-4xl md:text-5xl font-bold mt-4 text-slate-900">가격</h2>
           </div>
 
-          <div className="max-w-xl mx-auto bg-white rounded-2xl p-10 text-center shadow-lg">
-            <div className="inline-block px-4 py-1.5 bg-red-500 text-white rounded-full text-sm font-semibold mb-6">
-              1기 특별 할인
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto items-stretch">
+            {/* 정가 */}
+            <div className="bg-gradient-to-br from-slate-50 to-slate-100 rounded-2xl p-8 text-center shadow-lg border border-slate-200 flex flex-col justify-between">
+              <div>
+                <div className="inline-block px-4 py-1.5 bg-slate-800 text-white rounded-full text-sm font-semibold mb-6">
+                  일반 신청
+                </div>
+
+                <div className="mb-6">
+                  <div className="text-5xl md:text-6xl font-black text-slate-800 mb-3">
+                    250<span className="text-3xl">만원</span>
+                  </div>
+                  <div className="text-slate-500">
+                    VAT 별도
+                  </div>
+                </div>
+
+                <div className="text-left bg-white rounded-xl p-4 mb-6 text-sm text-slate-600">
+                  <ul className="space-y-2">
+                    <li className="flex items-center gap-2">
+                      <CheckCircle size={16} className="text-slate-400 flex-shrink-0" />
+                      5주 완성 커리큘럼 전체 수강
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle size={16} className="text-slate-400 flex-shrink-0" />
+                      넥스트라운드 성장 포럼 멤버십
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle size={16} className="text-slate-400 flex-shrink-0" />
+                      강사진과 네트워킹 디너
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <a
+                href="https://event-us.kr"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-slate-800 hover:bg-slate-900 text-white font-bold rounded-full text-base transition-all shadow-lg hover:shadow-xl w-full"
+              >
+                교육 신청하기
+                <ArrowRight size={20} />
+              </a>
             </div>
 
-            <div className="mb-8">
-              <div className="text-slate-500 text-base mb-3">
-                <span className="line-through">정상가 2,500,000원</span>
+            {/* 할인가 */}
+            <div className="bg-gradient-to-br from-blue-50 to-indigo-100 rounded-2xl p-8 text-center shadow-lg border-2 border-blue-400 relative flex flex-col justify-between">
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-blue-600 text-white rounded-full text-xs font-bold">
+                40% 할인
               </div>
-              <div className="text-5xl md:text-6xl font-black text-slate-900 mb-3">
-                1,500,000<span className="text-3xl">원</span>
-              </div>
-              <div className="text-slate-600">
-                VAT 별도
-              </div>
-            </div>
 
-            <a
-              href="https://event-us.kr"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-10 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-full text-lg transition-all shadow-lg hover:shadow-xl hover:scale-105"
-            >
-              교육 신청하기
-              <ArrowRight size={22} />
-            </a>
+              <div>
+                <div className="inline-block px-4 py-1.5 bg-blue-600 text-white rounded-full text-sm font-semibold mb-6 mt-2">
+                  회원사 초대권
+                </div>
+
+                <div className="mb-6">
+                  <div className="text-slate-400 text-base line-through mb-1">250만원</div>
+                  <div className="text-5xl md:text-6xl font-black text-blue-600 mb-3">
+                    150<span className="text-3xl">만원</span>
+                  </div>
+                  <div className="text-slate-500">
+                    VAT 별도
+                  </div>
+                </div>
+
+                <div className="text-left bg-white/80 rounded-xl p-4 mb-6 text-sm text-slate-700">
+                  <p className="font-semibold text-slate-900 mb-2">초대권 요청 대상</p>
+                  <ul className="space-y-1 text-xs">
+                    <li>• 초기투자액셀러레이터협회 회원사 임직원</li>
+                    <li>• 벤처스퀘어 투자 포트폴리오 임직원</li>
+                    <li>• 아일럼벤처스 투자 포트폴리오 임직원</li>
+                    <li>• 팩트시트 회원사 임직원</li>
+                    <li>• 팩트시트 회원사 관리 포트폴리오 임직원</li>
+                  </ul>
+                </div>
+              </div>
+
+              <a
+                href="mailto:mna@factsheet.biz?subject=Next Round Class 초대권 요청"
+                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-full text-base transition-all shadow-lg hover:shadow-xl w-full"
+              >
+                초대권 요청하기
+                <ArrowRight size={20} />
+              </a>
+            </div>
           </div>
         </div>
       </section>
