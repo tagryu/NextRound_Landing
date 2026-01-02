@@ -211,7 +211,7 @@ export default function Home() {
 
   const faqs = [
     { q: '교육 대상은 누구인가요?', a: '매각을 고려 중인 스타트업 CEO, 기업 M&A 담당 실무자, 그리고 M&A 딜 소싱에 관심 있는 투자자(LP)를 대상으로 합니다.' },
-    { q: '교육 비용은 얼마인가요?', a: '교육 비용은 이벤터스 신청 페이지에서 확인하실 수 있습니다.' },
+    { q: '교육 비용은 얼마인가요?', a: '교육 비용은 250만원입니다. 넥스트라운드 성장 포럼 멤버십이 포함된 가격입니다. 단, 초대권 지참시 할인이 적용됩니다.' },
     { q: '수료증이 발급되나요?', a: '네, 전체 교육 과정을 이수하신 분들께 수료증을 발급해 드립니다.' },
     { q: '환불 규정은 어떻게 되나요?', a: '교육 시작 7일 전까지 100% 환불, 3일 전까지 50% 환불이 가능합니다. 교육 시작 이후에는 환불이 어렵습니다.' },
     { q: '네트워킹 시간에는 무엇을 하나요?', a: '매주 2부(18:30-20:00)에는 강사진과 함께 저녁식사를 하며 자유로운 Q&A와 네트워킹이 진행됩니다.' }
@@ -613,33 +613,39 @@ export default function Home() {
 
                 {/* 강사 이미지 */}
                 {item.instructorIndices.length > 0 && (
-                  <div className="flex items-center gap-3 flex-shrink-0">
+                  <div className="flex items-start gap-5 flex-shrink-0">
                     {item.instructorIndices.map((instructorIdx, i) => (
                       <div
                         key={i}
-                        className="group relative cursor-pointer"
+                        className="group flex flex-col items-center cursor-pointer w-28 md:w-32"
                         onClick={() => setSelectedInstructor(instructorIdx)}
                       >
-                        {/* 외곽 링 */}
-                        <div className="absolute -inset-1 bg-gradient-to-br from-blue-400 via-indigo-500 to-purple-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm" />
-                        <div className="absolute -inset-0.5 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-full opacity-70 group-hover:opacity-100 transition-opacity" />
+                        {/* 이미지 래퍼 */}
+                        <div className="relative">
+                          {/* 외곽 링 */}
+                          <div className="absolute -inset-1 bg-gradient-to-br from-blue-400 via-indigo-500 to-purple-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm" />
+                          <div className="absolute -inset-0.5 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-full opacity-70 group-hover:opacity-100 transition-opacity" />
 
-                        {/* 이미지 컨테이너 */}
-                        <div className="relative w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden bg-gradient-to-b from-sky-50 via-blue-50 to-blue-200 ring-2 ring-white shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
-                          <Image
-                            src={instructors[instructorIdx].image}
-                            alt={instructors[instructorIdx].name}
-                            fill
-                            className="object-cover object-top"
-                            unoptimized
-                          />
+                          {/* 이미지 컨테이너 */}
+                          <div className="relative w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden bg-gradient-to-b from-sky-50 via-blue-50 to-blue-200 ring-2 ring-white shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
+                            <Image
+                              src={instructors[instructorIdx].image}
+                              alt={instructors[instructorIdx].name}
+                              fill
+                              className="object-cover object-top"
+                              unoptimized
+                            />
+                          </div>
                         </div>
 
-                        {/* 이름 툴팁 */}
-                        <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
-                          <span className="text-xs font-medium text-slate-700 bg-white px-2 py-0.5 rounded-full shadow-sm border border-slate-100">
+                        {/* 이름 라벨 */}
+                        <div className="mt-2 text-center">
+                          <div className="text-sm font-semibold text-blue-600 whitespace-nowrap">
                             {instructors[instructorIdx].name}
-                          </span>
+                          </div>
+                          <div className="text-xs text-slate-500 whitespace-nowrap">
+                            {instructors[instructorIdx].role}
+                          </div>
                         </div>
                       </div>
                     ))}
@@ -736,92 +742,64 @@ export default function Home() {
             <h2 className="text-4xl md:text-5xl font-bold mt-4 text-slate-900">가격</h2>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto items-stretch">
-            {/* 정가 */}
-            <div className="bg-gradient-to-br from-slate-50 to-slate-100 rounded-2xl p-8 text-center shadow-lg border border-slate-200 flex flex-col justify-between">
-              <div>
-                <div className="inline-block px-4 py-1.5 bg-slate-800 text-white rounded-full text-sm font-semibold mb-6">
-                  일반 신청
-                </div>
-
-                <div className="mb-6">
-                  <div className="text-5xl md:text-6xl font-black text-slate-800 mb-3">
-                    250<span className="text-3xl">만원</span>
-                  </div>
-                  <div className="text-slate-500">
-                    VAT 별도
-                  </div>
-                </div>
-
-                <div className="text-left bg-white rounded-xl p-4 mb-6 text-sm text-slate-600">
-                  <ul className="space-y-2">
-                    <li className="flex items-center gap-2">
-                      <CheckCircle size={16} className="text-slate-400 flex-shrink-0" />
-                      5주 완성 커리큘럼 전체 수강
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <CheckCircle size={16} className="text-slate-400 flex-shrink-0" />
-                      넥스트라운드 성장 포럼 멤버십
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <CheckCircle size={16} className="text-slate-400 flex-shrink-0" />
-                      강사진과 네트워킹 디너
-                    </li>
-                  </ul>
-                </div>
+          <div className="max-w-xl mx-auto bg-white rounded-2xl p-10 text-center shadow-lg border border-slate-200">
+            <div className="mb-8">
+              <div className="text-5xl md:text-6xl font-black text-blue-600 mb-3">
+                2,500,000<span className="text-3xl">원</span>
               </div>
+              <div className="text-slate-500">
+                VAT 별도
+              </div>
+            </div>
 
+            <div className="text-left bg-slate-50 rounded-xl p-4 mb-8 text-sm text-slate-600">
+              <ul className="space-y-2">
+                <li className="flex items-center gap-2">
+                  <CheckCircle size={16} className="text-blue-600 flex-shrink-0" />
+                  5주 완성 커리큘럼 전체 수강
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle size={16} className="text-blue-600 flex-shrink-0" />
+                  넥스트라운드 성장 포럼 멤버십
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle size={16} className="text-blue-600 flex-shrink-0" />
+                  강사진과 네트워킹 디너
+                </li>
+              </ul>
+            </div>
+
+            <div className="flex flex-col gap-3">
               <a
                 href="https://event-us.kr"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-slate-800 hover:bg-slate-900 text-white font-bold rounded-full text-base transition-all shadow-lg hover:shadow-xl w-full"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-full text-lg transition-all shadow-lg hover:shadow-xl"
               >
                 교육 신청하기
-                <ArrowRight size={20} />
+                <ArrowRight size={22} />
               </a>
-            </div>
-
-            {/* 할인가 */}
-            <div className="bg-gradient-to-br from-blue-50 to-indigo-100 rounded-2xl p-8 text-center shadow-lg border-2 border-blue-400 relative flex flex-col justify-between">
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-blue-600 text-white rounded-full text-xs font-bold">
-                40% 할인
-              </div>
-
-              <div>
-                <div className="inline-block px-4 py-1.5 bg-blue-600 text-white rounded-full text-sm font-semibold mb-6 mt-2">
-                  회원사 초대권
-                </div>
-
-                <div className="mb-6">
-                  <div className="text-slate-400 text-base line-through mb-1">250만원</div>
-                  <div className="text-5xl md:text-6xl font-black text-blue-600 mb-3">
-                    150<span className="text-3xl">만원</span>
-                  </div>
-                  <div className="text-slate-500">
-                    VAT 별도
-                  </div>
-                </div>
-
-                <div className="text-left bg-white/80 rounded-xl p-4 mb-6 text-sm text-slate-700">
-                  <p className="font-semibold text-slate-900 mb-2">초대권 요청 대상</p>
-                  <ul className="space-y-1 text-xs">
-                    <li>• 초기투자액셀러레이터협회 회원사 임직원</li>
-                    <li>• 벤처스퀘어 투자 포트폴리오 임직원</li>
-                    <li>• 아일럼벤처스 투자 포트폴리오 임직원</li>
-                    <li>• 팩트시트 회원사 임직원</li>
-                    <li>• 팩트시트 회원사 관리 포트폴리오 임직원</li>
-                  </ul>
-                </div>
-              </div>
 
               <a
                 href="mailto:mna@factsheet.biz?subject=Next Round Class 초대권 요청"
-                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-full text-base transition-all shadow-lg hover:shadow-xl w-full"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white hover:bg-slate-50 text-slate-700 font-bold rounded-full text-lg transition-all border border-slate-300 hover:border-slate-400"
               >
                 초대권 요청하기
-                <ArrowRight size={20} />
               </a>
+            </div>
+
+            <div className="mt-6 pt-6 border-t border-slate-200">
+              <p className="text-xs text-slate-500 mb-3">초대권 요청 대상</p>
+              <div className="flex flex-wrap justify-center gap-2">
+                <span className="px-3 py-1 bg-slate-100 rounded-full text-xs text-slate-600">초기투자액셀러레이터협회 회원사 임직원</span>
+                <span className="px-3 py-1 bg-slate-100 rounded-full text-xs text-slate-600">벤처스퀘어 투자 포트폴리오 임직원</span>
+                <span className="px-3 py-1 bg-slate-100 rounded-full text-xs text-slate-600">아일럼벤처스 투자 포트폴리오 임직원</span>
+                <span className="px-3 py-1 bg-slate-100 rounded-full text-xs text-slate-600">팩트시트 회원사 임직원</span>
+                <span className="px-3 py-1 bg-slate-100 rounded-full text-xs text-slate-600">팩트시트 회원사 관리 포트폴리오 임직원</span>
+              </div>
+              <p className="mt-4 text-sm text-blue-600 font-semibold">
+                초대권 지참시 1,500,000원으로 할인됩니다.
+              </p>
             </div>
           </div>
         </div>
