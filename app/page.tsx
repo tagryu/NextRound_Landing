@@ -20,43 +20,35 @@ export default function Home() {
   const curriculum = [
     {
       week: 1,
-      date: '1/14',
+      date: '1/21',
       title: '후속 투자 유치 및 인수합병 시장과 구조 이해',
-      contents: ['M&A Class 취지 및 방안', 'M&A 생태계, 매수·매도자의 역할, 실제 성공사례'],
-      instructors: ['명승은 대표', '지현철 대표'],
-      instructorIndices: [0, 1]
+      contents: ['M&A Class 취지 및 방안', '글로벌인 M&A 사례 스터디', 'M&A 생태계, 매수·매도자의 역할, 실제 성공사례'],
+      instructors: ['명승은 대표', '최충열 COO', '지현철 대표'],
+      instructorIndices: [0, 6, 1]
     },
     {
       week: 2,
-      date: '1/21',
-      title: '딜 구조 설계 & 가치평가',
-      contents: ['밸류에이션 실습, 거래 프로세스 시뮬레이션', '팩트시트 데이터룸 활용법'],
-      instructors: ['전명석 회계사', '함세희 대표'],
-      instructorIndices: [2, 3]
+      date: '1/28',
+      title: '매칭 시뮬레이션 & 협상 실습',
+      contents: ['파이브락스(5Rocks) M&A 사례 스터디', '매수자-매도자 실시간 매칭 협상 & 피칭'],
+      instructors: ['노정석 대표', '고민철 심사역'],
+      instructorIndices: [7, 5]
     },
     {
       week: 3,
-      date: '1/28',
-      title: '법률·세무 및 리스크 관리',
-      contents: ['계약서(LOI, SPA) 작성 및 리스크 대응'],
-      instructors: ['장효준 변호사'],
-      instructorIndices: [4]
+      date: '2/4',
+      title: '딜 구조 설계 & 가치평가',
+      contents: ['밸류에이션 실습, 거래 프로세스 시뮬레이션'],
+      instructors: ['전명석 회계사'],
+      instructorIndices: [2]
     },
     {
       week: 4,
-      date: '2/4',
-      title: '매칭 시뮬레이션 & 협상 실습',
-      contents: ['매수자-매도자 실시간 매칭 협상 및 피칭'],
-      instructors: ['고민철 심사역'],
-      instructorIndices: [5]
-    },
-    {
-      week: 5,
       date: '2/11',
-      title: 'Deal Case Study',
-      contents: ['실제 M&A 사례, 인사이드'],
-      instructors: ['전문가 패널'],
-      instructorIndices: []
+      title: '법률·세무 및 리스크 관리',
+      contents: ['계약서(LOI, SPA) 작성 및 리스크 대응', '팩트시트 데이터룸 활용법'],
+      instructors: ['장효준 변호사', '함세희 대표'],
+      instructorIndices: [4, 3]
     }
   ];
 
@@ -170,6 +162,29 @@ export default function Home() {
         { period: '업무', company: '테크 기반 스타트업 M&A 검토', position: '', details: ['SaaS, AI 기반 스타트업 대상 투자 및 M&A 검토', '투자 구조 설계 및 전략적 시너지 분석', '피투자사 경영진 미팅 및 투자 조건 협의'] },
         { period: '업무', company: '중소·중견기업 매도자문', position: '', details: ['상장사 및 비상장사 기업 매각/투자 유치 자문', '매각 가치 극대화 위한 거래 조건 협의', '딜 클로징 전 과정 프로젝트 매니지먼트'] },
         { period: '업무', company: '부동산 개발 프로젝트 자문', position: '', details: ['복합 부동산 개발 수익증권 매각 구조 검토', '사업비, 수익 배분 구조 분석', '자산운용사 및 투자자 대상 커뮤니케이션'] }
+      ]
+    },
+    {
+      name: '최충열',
+      role: '현 누아 COO',
+      desc: '글로벌 M&A 사례 전문가',
+      image: '',
+      careers: []
+    },
+    {
+      name: '노정석',
+      role: '비팩토리 대표',
+      desc: '연쇄 창업가, 파이브락스·태터앤컴퍼니 M&A 전문가',
+      image: '/assets/profile/노정석.png',
+      careers: [
+        { period: '현재', company: '비팩토리', position: '대표 (2020~)', details: ['AI 기반 실시간 개인 맞춤 화장품 조제 스마트 팩토리', '킵(KYYB): 스킨케어 브랜드', '아멜리: AI 기술 접목 색조 브랜드'] },
+        { period: 'EXIT', company: '파이브락스(5Rocks)', position: '창업자', details: ['모바일 게임 데이터 분석 기업', '미국 탭조이(Tapjoy)에 매각'] },
+        { period: 'EXIT', company: '태터앤컴퍼니', position: '창업자 (2005)', details: ['블로그·콘텐츠 솔루션', '아시아 스타트업 최초 구글(Google) 인수'] },
+        { period: 'IPO', company: '인젠(Inzen)', position: '창업자', details: ['보안 스타트업', '코스닥 상장'] },
+        { period: '2008 - 2010', company: '구글 코리아', position: '프로덕트 매니저', details: [] },
+        { period: '경력', company: 'SK텔레콤', position: 'CI사업본부 대리', details: [] },
+        { period: '투자', company: '엔젤 투자자', position: '', details: ['티몬, 패스트트랙아시아, 미미박스 등 다수 투자'] },
+        { period: '학력', company: 'KAIST', position: '경영공학 학사', details: ['1996년 국내 최초 해킹 사건의 주역'] }
       ]
     }
   ];
@@ -306,17 +321,17 @@ export default function Home() {
 
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center pt-20">
           <div className="inline-block px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-white text-sm mb-8">
-            2025년 1월 14일 개강 · 5주 과정
+            2025년 1월 21일 개강 · 4주 과정
           </div>
 
           <h1 className="text-5xl md:text-7xl font-black leading-tight mb-6 text-white">
             Next Round Class
           </h1>
 
-          <p className="text-lg md:text-xl text-white/90 mb-4 leading-relaxed">
+          <p className="text-lg md:text-xl text-white/90 mb-1 leading-snug">
             실제 투자 및 M&A 사례와 실습으로 배우는
           </p>
-          <p className="text-lg md:text-xl text-white/90 mb-10 leading-relaxed">
+          <p className="text-lg md:text-xl text-white/90 mb-10 leading-snug">
             후속투자와 M&A, EXIT 실전 전략
           </p>
 
@@ -324,7 +339,7 @@ export default function Home() {
             투자자, 창업자, 심사역 모두를 위한 전문가 네트워크
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-20">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
             <a
               href="https://event-us.kr"
               target="_blank"
@@ -339,6 +354,63 @@ export default function Home() {
             >
               커리큘럼 보기
             </a>
+          </div>
+
+          {/* 실제 M&A 사례 발표 하이라이트 카드 */}
+          <div className="max-w-lg mx-auto mb-16">
+            <div className="flex items-center justify-center gap-2 mb-4">
+              <span className="text-xl">📢</span>
+              <span className="px-2 py-1 bg-amber-400 text-slate-900 font-black text-xs rounded">1기</span>
+              <span className="text-white font-bold text-sm">M&A 사례 발표</span>
+            </div>
+            <div className="grid grid-cols-2 gap-2">
+              {/* 최충열 COO 카드 */}
+              <div
+                className="bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20 cursor-pointer hover:bg-white/15 transition-all group"
+                onClick={() => setSelectedInstructor(6)}
+              >
+                <div className="flex items-center gap-3">
+                  <div className="relative flex-shrink-0">
+                    <div className="absolute -inset-0.5 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-full opacity-70 group-hover:opacity-100 transition-opacity" />
+                    <div className="relative w-12 h-12 rounded-full overflow-hidden bg-gradient-to-b from-sky-50 via-blue-50 to-blue-200 ring-2 ring-white shadow-lg">
+                      <div className="w-full h-full flex items-center justify-center text-blue-400 text-lg font-bold">
+                        최
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <div className="text-white font-bold text-sm">최충열 COO</div>
+                    <div className="text-amber-300 text-xs font-medium">누아</div>
+                    <div className="text-white/70 text-xs mt-0.5">글로벌 M&A 사례</div>
+                  </div>
+                </div>
+              </div>
+              {/* 노정석 대표 카드 */}
+              <div
+                className="bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20 cursor-pointer hover:bg-white/15 transition-all group"
+                onClick={() => setSelectedInstructor(7)}
+              >
+                <div className="flex items-center gap-3">
+                  <div className="relative flex-shrink-0">
+                    <div className="absolute -inset-0.5 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-full opacity-70 group-hover:opacity-100 transition-opacity" />
+                    <div className="relative w-12 h-12 rounded-full overflow-hidden bg-gradient-to-b from-sky-50 via-blue-50 to-blue-200 ring-2 ring-white shadow-lg">
+                      <Image
+                        src="/assets/profile/노정석.png"
+                        alt="노정석"
+                        fill
+                        className="object-cover object-top"
+                        unoptimized
+                      />
+                    </div>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <div className="text-white font-bold text-sm">노정석 대표</div>
+                    <div className="text-amber-300 text-xs font-medium">비팩토리</div>
+                    <div className="text-white/70 text-xs mt-0.5">파이브락스 M&A 사례</div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className="flex flex-wrap justify-center items-center gap-4 md:gap-8 max-w-2xl mx-auto">
@@ -375,6 +447,33 @@ export default function Home() {
                 />
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Problem Statement Section */}
+      <section className="py-24 bg-gradient-to-br from-blue-50 to-indigo-50">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <span className="text-blue-600 text-sm font-semibold uppercase tracking-widest">M&A 사례와 실습으로 배우는 후속투자, M&A, EXIT 실전 전략</span>
+
+          <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mt-4 mb-6 leading-tight">
+            Exit 시장이 열리는 2026년,<br />
+            <span className="text-blue-600">지금 준비하지 않으면 3년 더 기다립니다</span>
+          </h2>
+
+          <p className="text-lg text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed">
+            M&A는 타이밍입니다. 시장이 열릴 때 준비된 사람만이 기회를 잡습니다.<br />
+            실제 딜을 경험한 전문가에게 배우지 않으면, 시행착오만 반복됩니다.
+          </p>
+
+          <div className="flex flex-wrap justify-center gap-4">
+            <a
+              href="#pricing"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-full text-base transition-all shadow-lg shadow-blue-600/30"
+            >
+              지금 준비 시작하기
+              <ArrowRight size={20} />
+            </a>
           </div>
         </div>
       </section>
@@ -546,7 +645,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
             <span className="text-blue-600 text-sm font-semibold uppercase tracking-widest">Curriculum</span>
-            <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-2 text-slate-900">5주 완성 커리큘럼</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-2 text-slate-900">4주 완성 커리큘럼</h2>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-slate-900">+ 넥스트라운드 성장 포럼 멤버십</h2>
             <p className="text-slate-600 max-w-2xl mx-auto text-lg mb-4">
               매주 수요일 오후, 이론과 실습, 실제 사례 연구를 병행하는 체계적인 커리큘럼
@@ -628,13 +727,19 @@ export default function Home() {
 
                           {/* 이미지 컨테이너 */}
                           <div className="relative w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden bg-gradient-to-b from-sky-50 via-blue-50 to-blue-200 ring-2 ring-white shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
-                            <Image
-                              src={instructors[instructorIdx].image}
-                              alt={instructors[instructorIdx].name}
-                              fill
-                              className="object-cover object-top"
-                              unoptimized
-                            />
+                            {instructors[instructorIdx].image ? (
+                              <Image
+                                src={instructors[instructorIdx].image}
+                                alt={instructors[instructorIdx].name}
+                                fill
+                                className="object-cover object-top"
+                                unoptimized
+                              />
+                            ) : (
+                              <div className="w-full h-full flex items-center justify-center text-blue-400 text-3xl font-bold">
+                                {instructors[instructorIdx].name.charAt(0)}
+                              </div>
+                            )}
                           </div>
                         </div>
 
@@ -756,7 +861,7 @@ export default function Home() {
               <ul className="space-y-2">
                 <li className="flex items-center gap-2">
                   <CheckCircle size={16} className="text-blue-600 flex-shrink-0" />
-                  5주 완성 커리큘럼 전체 수강
+                  4주 완성 커리큘럼 전체 수강
                 </li>
                 <li className="flex items-center gap-2">
                   <CheckCircle size={16} className="text-blue-600 flex-shrink-0" />
@@ -978,13 +1083,19 @@ export default function Home() {
               <div className="flex flex-col md:flex-row items-center gap-6">
                 {/* 프로필 이미지 */}
                 <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden bg-white shadow-lg">
-                  <Image
-                    src={instructors[selectedInstructor].image}
-                    alt={instructors[selectedInstructor].name}
-                    fill
-                    className="object-cover object-top"
-                    unoptimized
-                  />
+                  {instructors[selectedInstructor].image ? (
+                    <Image
+                      src={instructors[selectedInstructor].image}
+                      alt={instructors[selectedInstructor].name}
+                      fill
+                      className="object-cover object-top"
+                      unoptimized
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-blue-500 to-indigo-600 text-4xl font-bold text-white">
+                      {instructors[selectedInstructor].name.charAt(0)}
+                    </div>
+                  )}
                 </div>
 
                 {/* 기본 정보 */}
@@ -1009,41 +1120,53 @@ export default function Home() {
                 경력사항
               </h4>
 
-              <div className="overflow-x-auto">
-                <table className="w-full text-sm">
-                  <thead>
-                    <tr className="border-b-2 border-slate-200">
-                      <th className="text-left py-3 px-2 text-slate-600 font-semibold w-32">기간</th>
-                      <th className="text-left py-3 px-2 text-slate-600 font-semibold">경력내용</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {instructors[selectedInstructor].careers.map((career, idx) => (
-                      <tr key={idx} className="border-b border-slate-100">
-                        <td className="py-3 px-2 text-slate-500 align-top whitespace-nowrap">
-                          {career.period}
-                        </td>
-                        <td className="py-3 px-2">
-                          <div className="font-semibold text-slate-900">
-                            {career.company}
-                          </div>
-                          <div className="text-blue-600 text-xs mb-1">
-                            {career.position}
-                          </div>
-                          <ul className="text-slate-600 text-xs space-y-0.5">
-                            {career.details.map((detail, i) => (
-                              <li key={i} className="flex items-start gap-1">
-                                <span className="text-blue-400 mt-1">•</span>
-                                {detail}
-                              </li>
-                            ))}
-                          </ul>
-                        </td>
+              {instructors[selectedInstructor].careers.length > 0 ? (
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="border-b-2 border-slate-200">
+                        <th className="text-left py-3 px-2 text-slate-600 font-semibold w-32">기간</th>
+                        <th className="text-left py-3 px-2 text-slate-600 font-semibold">경력내용</th>
                       </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
+                    </thead>
+                    <tbody>
+                      {instructors[selectedInstructor].careers.map((career, idx) => (
+                        <tr key={idx} className="border-b border-slate-100">
+                          <td className="py-3 px-2 text-slate-500 align-top whitespace-nowrap">
+                            {career.period === 'EXIT' ? (
+                              <span className="px-2 py-0.5 bg-green-100 text-green-700 text-xs font-bold rounded">EXIT</span>
+                            ) : career.period === 'IPO' ? (
+                              <span className="px-2 py-0.5 bg-blue-100 text-blue-700 text-xs font-bold rounded">IPO</span>
+                            ) : (
+                              career.period
+                            )}
+                          </td>
+                          <td className="py-3 px-2">
+                            <div className="font-semibold text-slate-900">
+                              {career.company}
+                            </div>
+                            <div className="text-blue-600 text-xs mb-1">
+                              {career.position}
+                            </div>
+                            <ul className="text-slate-600 text-xs space-y-0.5">
+                              {career.details.map((detail, i) => (
+                                <li key={i} className="flex items-start gap-1">
+                                  <span className="text-blue-400 mt-1">•</span>
+                                  {detail}
+                                </li>
+                              ))}
+                            </ul>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              ) : (
+                <div className="text-center py-8 text-slate-500">
+                  경력 정보가 준비 중입니다.
+                </div>
+              )}
             </div>
           </div>
         </div>
