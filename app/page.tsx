@@ -958,7 +958,9 @@ export default function Home() {
               </a>
 
               <a
-                href="mailto:mna@factsheet.biz?subject=Next Round Class 초대권 요청"
+                href="https://forms.gle/RtBPsoqFdR1kDWP39"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white hover:bg-slate-50 text-slate-700 font-bold rounded-full text-lg transition-all border border-slate-300 hover:border-slate-400"
               >
                 초대권 요청하기
