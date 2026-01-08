@@ -272,8 +272,19 @@ export default function Home() {
         } border-b border-gray-100`}
       >
         <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-          <div className="text-xl font-bold tracking-tight">
-            Next Round <span className="text-blue-600">Class</span>
+          <div className="flex items-center gap-3">
+            <div className="relative h-12 w-40 -translate-y-0.5">
+              <Image
+                src="/assets/logo/VenturesquareAcademy.png"
+                alt="Venturesquare Academy"
+                fill
+                className="object-contain"
+                unoptimized
+              />
+            </div>
+            <div className="text-xl font-bold tracking-tight">
+              Next Round <span className="text-blue-600">Class</span>
+            </div>
           </div>
 
           <div className="hidden md:flex items-center gap-8">
@@ -290,7 +301,7 @@ export default function Home() {
               가격
             </a>
             <a
-              href="https://event-us.kr"
+              href="https://event-us.kr/factsheet/event/118829"
               target="_blank"
               rel="noopener noreferrer"
               className="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-full text-sm transition-all shadow-md hover:shadow-lg"
@@ -300,7 +311,7 @@ export default function Home() {
           </div>
 
           <a
-            href="https://event-us.kr"
+            href="https://event-us.kr/factsheet/event/118829"
             target="_blank"
             rel="noopener noreferrer"
             className="md:hidden px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-full text-sm transition-all shadow-md hover:shadow-lg"
@@ -423,7 +434,7 @@ export default function Home() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
             <a
-              href="https://event-us.kr"
+              href="https://event-us.kr/factsheet/event/118829"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-full text-base transition-all shadow-lg"
@@ -899,7 +910,7 @@ export default function Home() {
 
             <div className="flex flex-col gap-3">
               <a
-                href="https://event-us.kr"
+                href="https://event-us.kr/factsheet/event/118829"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-full text-lg transition-all shadow-lg hover:shadow-xl"
@@ -1048,7 +1059,7 @@ export default function Home() {
             </p>
 
             <a
-              href="https://event-us.kr"
+              href="https://event-us.kr/factsheet/event/118829"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-8 py-4 bg-white hover:bg-slate-100 text-slate-900 font-bold rounded-full text-lg transition-all"
