@@ -167,9 +167,14 @@ export default function Home() {
     {
       name: '최충열',
       role: '현 누아 COO',
-      desc: '글로벌 M&A 사례 전문가',
-      image: '',
-      careers: []
+      desc: '글로싸인 창업 → 케이사인 M&A EXIT',
+      image: '/assets/profile/최충열.png',
+      careers: [
+        { period: '현재', company: '누아(NUUA)', position: '최고운영책임자(COO)', details: ['항공 데이터 통합 및 AI 기반 항공권 유통 플랫폼 비즈니스 운영 총괄', '항공사 NDC(New Distribution Capability) 기술 상용화 및 B2B 파트너십 확장 주도', '기업가치 500억 스타트업'] },
+        { period: 'EXIT', company: '글로싸인(Glosign)', position: '대표이사 / 창업자', details: ['클라우드 기반 전자계약 플랫폼 설립', '블록체인 기술 접목한 계약 위변조 방지 및 API 연동 서비스 개발', '설립 18개월 만에 상장사 케이사인(KSign)에 50억 M&A'] },
+        { period: '창업', company: '프라핏(Profit)', position: '대표', details: ['중소형 상업용 건물 관리 솔루션 개발', '프롭테크 분야 스타트업 운영'] },
+        { period: '활동', company: '스타트업 멘토링', position: '', details: ['광운대학교 등 대학가 스타트업 멘토', 'CEO 강연 및 창업 컨설팅 활동'] }
+      ]
     },
     {
       name: '노정석',
@@ -335,11 +340,88 @@ export default function Home() {
             후속투자와 M&A, EXIT 실전 전략
           </p>
 
-          <p className="text-white/70 text-sm mb-12">
+          <p className="text-white/70 text-sm mb-10">
             투자자, 창업자, 심사역 모두를 위한 전문가 네트워크
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
+          {/* 실제 M&A 사례 발표 하이라이트 카드 */}
+          <div className="max-w-3xl mx-auto mb-12">
+            <div className="flex items-center justify-center gap-2 mb-6">
+              <span className="px-3 py-1.5 bg-amber-400 text-slate-900 font-black text-sm rounded-full">1기 특별 세션</span>
+              <span className="text-white font-bold text-lg">실제 M&A EXIT 창업가의 생생한 경험담</span>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {/* 노정석 대표 카드 */}
+              <div
+                className="bg-white rounded-2xl p-5 cursor-pointer hover:shadow-2xl hover:scale-[1.02] transition-all group"
+                onClick={() => setSelectedInstructor(7)}
+              >
+                <div className="flex items-start gap-4">
+                  <div className="relative flex-shrink-0">
+                    <div className="relative w-20 h-20 rounded-xl overflow-hidden shadow-lg">
+                      <Image
+                        src="/assets/profile/노정석.png"
+                        alt="노정석"
+                        fill
+                        className="object-cover object-top"
+                        unoptimized
+                      />
+                    </div>
+                    <div className="absolute -bottom-1 -right-1 px-2 py-0.5 bg-green-500 text-white text-[10px] font-bold rounded">
+                      2회 EXIT
+                    </div>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-2 mb-1">
+                      <span className="text-slate-900 font-bold text-lg">노정석</span>
+                      <span className="text-slate-500 text-sm">대표</span>
+                    </div>
+                    <div className="text-blue-600 text-sm font-medium mb-2 text-left">비팩토리</div>
+                    <div className="text-slate-700 text-sm leading-relaxed text-left">
+                      <span className="font-semibold text-slate-900">아시아 최초 구글 매각</span> +<br/>
+                      파이브락스 → 미국 탭조이 매각
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {/* 최충열 COO 카드 */}
+              <div
+                className="bg-white rounded-2xl p-5 cursor-pointer hover:shadow-2xl hover:scale-[1.02] transition-all group"
+                onClick={() => setSelectedInstructor(6)}
+              >
+                <div className="flex items-start gap-4">
+                  <div className="relative flex-shrink-0">
+                    <div className="relative w-20 h-20 rounded-xl overflow-hidden shadow-lg">
+                      <Image
+                        src="/assets/profile/최충열.png"
+                        alt="최충열"
+                        fill
+                        className="object-cover object-top"
+                        unoptimized
+                      />
+                    </div>
+                    <div className="absolute -bottom-1 -right-1 px-2 py-0.5 bg-amber-500 text-white text-[10px] font-bold rounded">
+                      50억 EXIT
+                    </div>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-2 mb-1">
+                      <span className="text-slate-900 font-bold text-lg">최충열</span>
+                      <span className="text-slate-500 text-sm">COO</span>
+                    </div>
+                    <div className="text-blue-600 text-sm font-medium mb-2 text-left">누아 (500억 기업가치)</div>
+                    <div className="text-slate-700 text-sm leading-relaxed text-left">
+                      <span className="font-semibold text-slate-900">18개월 만에 50억 마이크로 M&A</span><br/>
+                      글로싸인 창업 → EXIT<br/>
+                      → 현 500억 스타트업 COO
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
             <a
               href="https://event-us.kr"
               target="_blank"
@@ -356,96 +438,36 @@ export default function Home() {
             </a>
           </div>
 
-          {/* 실제 M&A 사례 발표 하이라이트 카드 */}
-          <div className="max-w-lg mx-auto mb-16">
-            <div className="flex items-center justify-center gap-2 mb-4">
-              <span className="text-xl">📢</span>
-              <span className="px-2 py-1 bg-amber-400 text-slate-900 font-black text-xs rounded">1기</span>
-              <span className="text-white font-bold text-sm">M&A 사례 발표</span>
+          <div className="flex justify-center items-center gap-6 md:gap-12 max-w-3xl mx-auto">
+            {/* 벤처스퀘어 */}
+            <div className="h-14 md:h-16 w-36 md:w-44 relative flex items-center justify-center">
+              <Image
+                src="/assets/logo/VentureSquare_hero.png"
+                alt="벤처스퀘어"
+                fill
+                className="object-contain"
+                unoptimized
+              />
             </div>
-            <div className="grid grid-cols-2 gap-2">
-              {/* 최충열 COO 카드 */}
-              <div
-                className="bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20 cursor-pointer hover:bg-white/15 transition-all group"
-                onClick={() => setSelectedInstructor(6)}
-              >
-                <div className="flex items-center gap-3">
-                  <div className="relative flex-shrink-0">
-                    <div className="absolute -inset-0.5 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-full opacity-70 group-hover:opacity-100 transition-opacity" />
-                    <div className="relative w-12 h-12 rounded-full overflow-hidden bg-gradient-to-b from-sky-50 via-blue-50 to-blue-200 ring-2 ring-white shadow-lg">
-                      <div className="w-full h-full flex items-center justify-center text-blue-400 text-lg font-bold">
-                        최
-                      </div>
-                    </div>
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <div className="text-white font-bold text-sm">최충열 COO</div>
-                    <div className="text-amber-300 text-xs font-medium">누아</div>
-                    <div className="text-white/70 text-xs mt-0.5">글로벌 M&A 사례</div>
-                  </div>
-                </div>
-              </div>
-              {/* 노정석 대표 카드 */}
-              <div
-                className="bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20 cursor-pointer hover:bg-white/15 transition-all group"
-                onClick={() => setSelectedInstructor(7)}
-              >
-                <div className="flex items-center gap-3">
-                  <div className="relative flex-shrink-0">
-                    <div className="absolute -inset-0.5 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-full opacity-70 group-hover:opacity-100 transition-opacity" />
-                    <div className="relative w-12 h-12 rounded-full overflow-hidden bg-gradient-to-b from-sky-50 via-blue-50 to-blue-200 ring-2 ring-white shadow-lg">
-                      <Image
-                        src="/assets/profile/노정석.png"
-                        alt="노정석"
-                        fill
-                        className="object-cover object-top"
-                        unoptimized
-                      />
-                    </div>
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <div className="text-white font-bold text-sm">노정석 대표</div>
-                    <div className="text-amber-300 text-xs font-medium">비팩토리</div>
-                    <div className="text-white/70 text-xs mt-0.5">파이브락스 M&A 사례</div>
-                  </div>
-                </div>
-              </div>
+            {/* 아일럼인베스트 */}
+            <div className="h-16 md:h-18 w-32 md:w-36 relative flex items-center justify-center translate-y-2 translate-x-3">
+              <Image
+                src="/assets/logo/yleminvest_2.png"
+                alt="아일럼인베스트"
+                fill
+                className="object-contain"
+                unoptimized
+              />
             </div>
-          </div>
-
-          <div className="flex flex-wrap justify-center items-center gap-4 md:gap-8 max-w-2xl mx-auto">
-            <div className="flex items-center justify-center">
-              <div className="relative h-8 w-32 md:h-10 md:w-40">
-                <Image
-                  src="/assets/logo/VentureSquare_hero.png"
-                  alt="벤처스퀘어"
-                  fill
-                  className="object-contain"
-                  unoptimized
-                />
-              </div>
-            </div>
-            <div className="flex items-center justify-center">
-              <div className="relative h-12 w-44 md:h-16 md:w-56">
-                <Image
-                  src="/assets/logo/yleminvest.png"
-                  alt="아일럼인베스트"
-                  fill
-                  className="object-contain brightness-0 invert"
-                  unoptimized
-                />
-              </div>
-            </div>
-            <div className="flex items-center justify-center">
-              <div className="relative h-16 w-36 md:h-24 md:w-48 mt-1 md:mt-2">
-                <Image
-                  src="/assets/logo/factsheet_hero.png"
-                  alt="팩트시트"
-                  fill
-                  className="object-contain"
-                  unoptimized
-                />
-              </div>
+            {/* 팩트시트 */}
+            <div className="h-18 md:h-22 w-44 md:w-52 relative flex items-center justify-center translate-y-1">
+              <Image
+                src="/assets/logo/factsheet_hero.png"
+                alt="팩트시트"
+                fill
+                className="object-contain"
+                unoptimized
+              />
             </div>
           </div>
         </div>
@@ -578,8 +600,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Instructors Section */}
-      <section id="instructors" className="py-24 bg-gradient-to-b from-slate-50 to-white">
+      {/* Instructors Section - 임시로 숨김 처리 (hidden) */}
+      <section id="instructors" className="hidden py-24 bg-gradient-to-b from-slate-50 to-white">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
             <span className="text-blue-600 text-sm font-semibold uppercase tracking-widest">Instructors</span>
@@ -598,7 +620,7 @@ export default function Home() {
               >
                 {/* Logo in top right */}
                 <div className="absolute top-2 right-2 md:top-3 md:right-3 z-20">
-                  <span className="text-[8px] md:text-[10px] font-bold text-slate-700">Next Round <span className="text-blue-600">M&A</span></span>
+                  <span className="text-[8px] md:text-[10px] font-bold text-slate-700">Next Round <span className="text-blue-600">Class</span></span>
                 </div>
 
                 {/* Gradient Background Section */}
@@ -783,13 +805,13 @@ export default function Home() {
               <div className="flex items-start gap-2 text-slate-700 mb-6">
                 <MapPin size={20} className="text-blue-600 flex-shrink-0 mt-1" />
                 <div>
-                  <p className="font-medium">서울 강남구 언주로 417 더체크타워 7층</p>
+                  <p className="font-medium">서울 강남구 언주로 417 모비빌딩 7층</p>
                   <p className="text-slate-500 text-sm mt-1">(지번) 역삼동 721-38 · 선릉역 도보 5분</p>
                 </div>
               </div>
               <div className="flex-1 border border-slate-200 rounded-xl overflow-hidden min-h-[300px]">
                 <iframe
-                  src="https://www.google.com/maps?q=서울+강남구+언주로+417+더체크타워&output=embed&hl=ko"
+                  src="https://www.google.com/maps?q=서울+강남구+언주로+417+모비빌딩&output=embed&hl=ko"
                   width="100%"
                   height="100%"
                   style={{ border: 0, minHeight: '300px' }}
@@ -836,6 +858,7 @@ export default function Home() {
               </div>
             </div>
           </div>
+
         </div>
       </section>
 
@@ -1021,7 +1044,7 @@ export default function Home() {
             </h2>
 
             <p className="text-lg text-slate-300 mb-8">
-              2025년 1월 14일 개강 · 선착순 마감
+              2025년 1월 21일 개강 · 선착순 마감
             </p>
 
             <a
@@ -1052,6 +1075,19 @@ export default function Home() {
 
             <div className="text-slate-400 text-sm mb-2">
               벤처스퀘어 · 아일럼인베스트 · 팩트시트
+            </div>
+
+            <div className="flex items-center justify-center gap-2 mb-2">
+              <span className="text-slate-500 text-sm">장소 협찬</span>
+              <div className="relative h-6 w-24">
+                <Image
+                  src="/assets/logo/mobidays.png"
+                  alt="모비데이즈"
+                  fill
+                  className="object-contain"
+                  unoptimized
+                />
+              </div>
             </div>
 
             <div className="text-slate-500 text-sm">
