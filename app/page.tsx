@@ -1132,14 +1132,16 @@ export default function Home() {
 
             <div className="flex items-center justify-center gap-2 mb-2">
               <span className="text-slate-500 text-sm">장소 협찬</span>
-              <div className="relative h-6 w-24">
-                <Image
-                  src="/assets/logo/mobidays.png"
-                  alt="모비데이즈"
-                  fill
-                  className="object-contain"
-                  unoptimized
-                />
+              <div className="bg-white rounded-md px-2 py-1">
+                <div className="relative h-4 w-20">
+                  <Image
+                    src="/assets/logo/mobidays.png"
+                    alt="모비데이즈"
+                    fill
+                    className="object-contain"
+                    unoptimized
+                  />
+                </div>
               </div>
             </div>
 
