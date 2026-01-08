@@ -22,17 +22,17 @@ export default function Home() {
       week: 1,
       date: '1/21',
       title: '후속 투자 유치 및 인수합병 시장과 구조 이해',
-      contents: ['M&A Class 취지 및 방안', '글로벌인 M&A 사례 스터디', 'M&A 생태계, 매수·매도자의 역할, 실제 성공사례'],
-      instructors: ['명승은 대표', '최충열 COO', '지현철 대표'],
-      instructorIndices: [0, 6, 1]
+      contents: ['M&A Class 취지 및 방안', '파이브락스(5Rocks) M&A 사례 스터디', 'M&A 생태계, 매수·매도자의 역할, 실제 성공사례'],
+      instructors: ['명승은 대표', '노정석 대표', '지현철 대표'],
+      instructorIndices: [0, 7, 1]
     },
     {
       week: 2,
       date: '1/28',
       title: '매칭 시뮬레이션 & 협상 실습',
-      contents: ['파이브락스(5Rocks) M&A 사례 스터디', '매수자-매도자 실시간 매칭 협상 & 피칭'],
-      instructors: ['노정석 대표', '고민철 심사역'],
-      instructorIndices: [7, 5]
+      contents: ['글로싸인 M&A 사례 스터디', '매수자-매도자 실시간 매칭 협상 및 피칭'],
+      instructors: ['최충열 COO', '고민철 심사역'],
+      instructorIndices: [6, 5]
     },
     {
       week: 3,
@@ -799,8 +799,8 @@ export default function Home() {
             <h2 className="text-4xl md:text-5xl font-bold mt-4 text-slate-900">교육 장소</h2>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="flex flex-col">
+          <div className="grid md:grid-cols-2 gap-8 items-end">
+            <div className="flex flex-col h-full">
               <h3 className="text-2xl font-bold mb-4 text-slate-900">모비데이즈</h3>
               <div className="flex items-start gap-2 text-slate-700 mb-6">
                 <MapPin size={20} className="text-blue-600 flex-shrink-0 mt-1" />
@@ -809,12 +809,12 @@ export default function Home() {
                   <p className="text-slate-500 text-sm mt-1">(지번) 역삼동 721-38 · 선릉역 도보 5분</p>
                 </div>
               </div>
-              <div className="flex-1 border border-slate-200 rounded-xl overflow-hidden min-h-[300px]">
+              <div className="flex-1 border border-slate-200 rounded-xl overflow-hidden">
                 <iframe
                   src="https://www.google.com/maps?q=서울+강남구+언주로+417+모비빌딩&output=embed&hl=ko"
                   width="100%"
                   height="100%"
-                  style={{ border: 0, minHeight: '300px' }}
+                  style={{ border: 0, minHeight: '350px' }}
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
@@ -822,11 +822,11 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-3">
               {/* 큰 이미지 (첫 번째) */}
               {placeImages.length > 0 && (
                 <div
-                  className="aspect-video relative rounded-xl overflow-hidden border border-slate-200 cursor-pointer transition-transform hover:scale-[1.02]"
+                  className="aspect-[16/9] relative rounded-xl overflow-hidden border border-slate-200 cursor-pointer transition-transform hover:scale-[1.02]"
                   onClick={() => openModal(0)}
                 >
                   <Image
@@ -839,11 +839,11 @@ export default function Home() {
                 </div>
               )}
               {/* 작은 이미지 3개 (가로 배치) */}
-              <div className="grid grid-cols-3 gap-2 md:gap-4">
+              <div className="grid grid-cols-3 gap-2 md:gap-3">
                 {placeImages.slice(1, 4).map((place, i) => (
                   <div
                     key={i}
-                    className="aspect-video relative rounded-xl overflow-hidden border border-slate-200 cursor-pointer transition-transform hover:scale-105"
+                    className="aspect-[4/3] relative rounded-xl overflow-hidden border border-slate-200 cursor-pointer transition-transform hover:scale-105"
                     onClick={() => openModal(i + 1)}
                   >
                     <Image
