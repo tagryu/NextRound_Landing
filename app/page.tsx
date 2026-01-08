@@ -1122,6 +1122,10 @@ export default function Home() {
               Next Round <span className="text-blue-400">M&A</span>
             </div>
 
+            <div className="text-slate-300 text-sm font-medium mb-1">
+              Venturesquare Academy
+            </div>
+
             <div className="text-slate-400 text-sm mb-2">
               벤처스퀘어 · 아일럼인베스트 · 팩트시트
             </div>
@@ -1140,7 +1144,7 @@ export default function Home() {
             </div>
 
             <div className="text-slate-500 text-sm">
-              © 2025 Next Round M&A. All rights reserved.
+              © 2026 Next Round M&A. All rights reserved.
             </div>
           </div>
         </footer>
