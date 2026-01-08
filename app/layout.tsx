@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     siteName: "Next Round M&A",
     images: [
       {
-        url: "https://mna.factsheet.kr/assets/og-image.jpg",
+        url: "https://mna.factsheet.kr/assets/og-image.png",
         width: 1920,
         height: 1200,
         alt: "Next Round M&A - 실전 M&A 실무 교육",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Next Round M&A | 실전 M&A 실무 교육",
     description: "벤처스퀘어, 아일럼인베스트, 팩트시트가 함께하는 5주간의 실전 M&A 및 기업 매각 마스터 클래스",
-    images: ["https://mna.factsheet.kr/assets/og-image.jpg"],
+    images: ["https://mna.factsheet.kr/assets/og-image.png"],
   },
 };
 

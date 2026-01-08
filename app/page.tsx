@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { ChevronDown, MapPin, Calendar, Clock, Users, ArrowRight, CheckCircle, Building2, Briefcase, TrendingUp, FileText, Bot, Handshake, Network, X, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronDown, MapPin, Calendar, Clock, Users, ArrowRight, CheckCircle, Building2, Briefcase, TrendingUp, FileText, Bot, Handshake, Network, X, ChevronLeft, ChevronRight, Menu } from 'lucide-react';
 
 export default function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -10,6 +10,7 @@ export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [selectedInstructor, setSelectedInstructor] = useState<number | null>(null);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -262,7 +263,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-white text-slate-900">
+    <div className="min-h-screen bg-white text-slate-900 overflow-x-hidden">
       {/* Navigation */}
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -272,8 +273,8 @@ export default function Home() {
         } border-b border-gray-100`}
       >
         <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-          <div className="flex items-center gap-3">
-            <div className="relative h-12 w-40 -translate-y-0.5">
+          <div className="flex items-center gap-2 md:gap-3">
+            <div className="relative h-12 w-40 md:h-14 md:w-48 -translate-y-0.5 flex-shrink-0">
               <Image
                 src="/assets/logo/VenturesquareAcademy.png"
                 alt="Venturesquare Academy"
@@ -282,7 +283,7 @@ export default function Home() {
                 unoptimized
               />
             </div>
-            <div className="text-xl font-bold tracking-tight">
+            <div className="hidden md:block text-xl font-bold tracking-tight whitespace-nowrap">
               Next Round <span className="text-blue-600">Class</span>
             </div>
           </div>
@@ -310,15 +311,50 @@ export default function Home() {
             </a>
           </div>
 
-          <a
-            href="https://event-us.kr/factsheet/event/118829"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="md:hidden px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-full text-sm transition-all shadow-md hover:shadow-lg"
+          {/* 모바일 햄버거 버튼 */}
+          <button
+            className="md:hidden p-2 text-slate-700 hover:text-blue-600 transition-colors"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
-            교육 신청하기
-          </a>
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
+
+        {/* 모바일 메뉴 */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden bg-white border-t border-gray-100 px-6 py-4 space-y-3">
+            <a
+              href="#curriculum"
+              className="block text-slate-700 hover:text-blue-600 font-medium py-2 transition-colors"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              커리큘럼
+            </a>
+            <a
+              href="#venue"
+              className="block text-slate-700 hover:text-blue-600 font-medium py-2 transition-colors"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              교육장소
+            </a>
+            <a
+              href="#pricing"
+              className="block text-slate-700 hover:text-blue-600 font-medium py-2 transition-colors"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              가격
+            </a>
+            <a
+              href="https://event-us.kr/factsheet/event/118829"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block w-full text-center px-5 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-full transition-all shadow-md"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              교육 신청하기
+            </a>
+          </div>
+        )}
       </nav>
 
       {/* Hero Section */}
@@ -335,12 +371,12 @@ export default function Home() {
           />
         </div>
 
-        <div className="relative z-10 max-w-4xl mx-auto px-6 text-center pt-20">
-          <div className="inline-block px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-white text-sm mb-8">
+        <div className="relative z-10 max-w-4xl mx-auto px-4 md:px-6 text-center pt-24 md:pt-20 pb-8">
+          <div className="inline-block px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-white text-sm mb-6 md:mb-8">
             2025년 1월 21일 개강 · 4주 과정
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-black leading-tight mb-6 text-white">
+          <h1 className="text-3xl sm:text-5xl md:text-7xl font-black leading-tight mb-4 md:mb-6 text-white">
             Next Round Class
           </h1>
 
@@ -356,10 +392,10 @@ export default function Home() {
           </p>
 
           {/* 실제 M&A 사례 발표 하이라이트 카드 */}
-          <div className="max-w-3xl mx-auto mb-12">
-            <div className="flex items-center justify-center gap-2 mb-6">
+          <div className="max-w-3xl mx-auto mb-12 px-4">
+            <div className="flex items-center justify-center gap-2 mb-6 flex-wrap">
               <span className="px-3 py-1.5 bg-amber-400 text-slate-900 font-black text-sm rounded-full">1기 특별 세션</span>
-              <span className="text-white font-bold text-lg">실제 M&A EXIT 창업가의 생생한 경험담</span>
+              <span className="text-white font-bold text-base md:text-lg">실제 M&A EXIT 창업가의 생생한 경험담</span>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {/* 노정석 대표 카드 */}
@@ -432,26 +468,26 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 px-4">
             <a
               href="https://event-us.kr/factsheet/event/118829"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-full text-base transition-all shadow-lg"
+              className="inline-flex items-center justify-center gap-2 px-6 md:px-8 py-3.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-full text-sm md:text-base transition-all shadow-lg"
             >
               교육 신청하기
             </a>
             <a
               href="#curriculum"
-              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white font-semibold rounded-full text-base border border-white/30 transition-all"
+              className="inline-flex items-center justify-center gap-2 px-6 md:px-8 py-3.5 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white font-semibold rounded-full text-sm md:text-base border border-white/30 transition-all"
             >
               커리큘럼 보기
             </a>
           </div>
 
-          <div className="flex justify-center items-center gap-6 md:gap-12 max-w-3xl mx-auto">
+          <div className="flex justify-center items-center gap-3 sm:gap-6 md:gap-12 max-w-3xl mx-auto px-2">
             {/* 벤처스퀘어 */}
-            <div className="h-14 md:h-16 w-36 md:w-44 relative flex items-center justify-center">
+            <div className="h-10 sm:h-14 md:h-16 w-24 sm:w-36 md:w-44 relative flex items-center justify-center">
               <Image
                 src="/assets/logo/VentureSquare_hero.png"
                 alt="벤처스퀘어"
@@ -461,7 +497,7 @@ export default function Home() {
               />
             </div>
             {/* 아일럼인베스트 */}
-            <div className="h-16 md:h-18 w-32 md:w-36 relative flex items-center justify-center translate-y-2 translate-x-3">
+            <div className="h-12 sm:h-16 md:h-18 w-20 sm:w-32 md:w-36 relative flex items-center justify-center translate-y-1 sm:translate-y-2 translate-x-1 sm:translate-x-3">
               <Image
                 src="/assets/logo/yleminvest_2.png"
                 alt="아일럼인베스트"
@@ -471,7 +507,7 @@ export default function Home() {
               />
             </div>
             {/* 팩트시트 */}
-            <div className="h-18 md:h-22 w-44 md:w-52 relative flex items-center justify-center translate-y-1">
+            <div className="h-14 sm:h-18 md:h-22 w-28 sm:w-44 md:w-52 relative flex items-center justify-center translate-y-0.5 sm:translate-y-1">
               <Image
                 src="/assets/logo/factsheet_hero.png"
                 alt="팩트시트"
@@ -709,47 +745,49 @@ export default function Home() {
               key={index}
               className="bg-white border border-slate-200 rounded-xl p-5 mb-3 hover:border-blue-300 hover:shadow-lg transition-all"
             >
-              <div className="flex flex-wrap gap-4">
-                <div className="w-14 h-14 bg-blue-100 border border-blue-200 rounded-lg flex flex-col items-center justify-center flex-shrink-0">
-                  <span className="text-blue-600 text-[10px] font-semibold">WEEK</span>
-                  <span className="text-blue-600 text-xl font-bold">{item.week}</span>
-                </div>
-
-                <div className="flex-1 min-w-0">
-                  <div className="text-slate-600 text-xs mb-2 font-medium">
-                    {item.date} (수) | 1부 17:00-18:30
+              <div className="flex flex-col lg:flex-row gap-4">
+                <div className="flex gap-4 flex-1 min-w-0">
+                  <div className="w-14 h-14 bg-blue-100 border border-blue-200 rounded-lg flex flex-col items-center justify-center flex-shrink-0">
+                    <span className="text-blue-600 text-[10px] font-semibold">WEEK</span>
+                    <span className="text-blue-600 text-xl font-bold">{item.week}</span>
                   </div>
 
-                  <h3 className="text-lg font-bold mb-2 text-slate-900">{item.title}</h3>
+                  <div className="flex-1 min-w-0">
+                    <div className="text-slate-600 text-xs mb-2 font-medium">
+                      {item.date} (수) | 1부 17:00-18:30
+                    </div>
 
-                  <ul className="space-y-1 mb-3">
-                    {item.contents.map((content, i) => (
-                      <li key={i} className="flex items-start gap-2 text-slate-700 text-sm">
-                        <CheckCircle size={16} className="text-blue-600 flex-shrink-0 mt-0.5" />
-                        <span>{content}</span>
-                      </li>
-                    ))}
-                  </ul>
+                    <h3 className="text-lg font-bold mb-2 text-slate-900">{item.title}</h3>
 
-                  <div className="flex flex-wrap gap-1.5">
-                    {item.instructors.map((instructor, i) => (
-                      <span
-                        key={i}
-                        className="px-2.5 py-0.5 bg-slate-100 rounded-full text-xs text-slate-700 font-medium"
-                      >
-                        {instructor}
-                      </span>
-                    ))}
+                    <ul className="space-y-1 mb-3">
+                      {item.contents.map((content, i) => (
+                        <li key={i} className="flex items-start gap-2 text-slate-700 text-sm">
+                          <CheckCircle size={16} className="text-blue-600 flex-shrink-0 mt-0.5" />
+                          <span>{content}</span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    <div className="flex flex-wrap gap-1.5">
+                      {item.instructors.map((instructor, i) => (
+                        <span
+                          key={i}
+                          className="px-2.5 py-0.5 bg-slate-100 rounded-full text-xs text-slate-700 font-medium"
+                        >
+                          {instructor}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
 
                 {/* 강사 이미지 */}
                 {item.instructorIndices.length > 0 && (
-                  <div className="flex items-start gap-5 flex-shrink-0">
+                  <div className="flex items-center justify-center lg:items-start gap-3 sm:gap-5 flex-shrink-0 pt-2 lg:pt-0">
                     {item.instructorIndices.map((instructorIdx, i) => (
                       <div
                         key={i}
-                        className="group flex flex-col items-center cursor-pointer w-28 md:w-32"
+                        className="group flex flex-col items-center cursor-pointer w-16 sm:w-20 lg:w-28"
                         onClick={() => setSelectedInstructor(instructorIdx)}
                       >
                         {/* 이미지 래퍼 */}
@@ -759,7 +797,7 @@ export default function Home() {
                           <div className="absolute -inset-0.5 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-full opacity-70 group-hover:opacity-100 transition-opacity" />
 
                           {/* 이미지 컨테이너 */}
-                          <div className="relative w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden bg-gradient-to-b from-sky-50 via-blue-50 to-blue-200 ring-2 ring-white shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
+                          <div className="relative w-14 h-14 sm:w-18 sm:h-18 lg:w-24 lg:h-24 rounded-full overflow-hidden bg-gradient-to-b from-sky-50 via-blue-50 to-blue-200 ring-2 ring-white shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
                             {instructors[instructorIdx].image ? (
                               <Image
                                 src={instructors[instructorIdx].image}
@@ -777,11 +815,11 @@ export default function Home() {
                         </div>
 
                         {/* 이름 라벨 */}
-                        <div className="mt-2 text-center">
-                          <div className="text-sm font-semibold text-blue-600 whitespace-nowrap">
+                        <div className="mt-1 sm:mt-2 text-center">
+                          <div className="text-[10px] sm:text-xs lg:text-sm font-semibold text-blue-600 whitespace-nowrap">
                             {instructors[instructorIdx].name}
                           </div>
-                          <div className="text-xs text-slate-500 whitespace-nowrap">
+                          <div className="text-[8px] sm:text-[10px] lg:text-xs text-slate-500 whitespace-nowrap">
                             {instructors[instructorIdx].role}
                           </div>
                         </div>
