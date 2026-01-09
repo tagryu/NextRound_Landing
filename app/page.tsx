@@ -461,7 +461,7 @@ export default function Home() {
                     <div className="text-slate-700 text-sm leading-relaxed text-left">
                       <span className="font-semibold text-slate-900">18개월 만에 마이크로 M&A</span><br/>
                       글로싸인 창업 → EXIT<br/>
-                      → 현 스타트업 CSO
+                      → 현 누아 CSO
                     </div>
                   </div>
                 </div>
