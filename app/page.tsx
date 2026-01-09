@@ -169,7 +169,7 @@ export default function Home() {
       name: '최충열',
       role: '현 누아 CSO',
       desc: '글로싸인 창업 → 케이사인 M&A EXIT',
-      image: '/assets/profile/최충열.png',
+      image: '/assets/profile/최충열_optimized.jpg',
       careers: [
         { period: '현재', company: '누아(NUUA)', position: '최고전략책임자(CSO)', details: ['항공 데이터 통합 및 AI 기반 항공권 유통 플랫폼 비즈니스 운영 총괄', '항공사 NDC(New Distribution Capability) 기술 상용화 및 B2B 파트너십 확장 주도', '기업가치 500억 스타트업'] },
         { period: 'EXIT', company: '글로싸인(Glosign)', position: '대표이사 / 창업자', details: ['클라우드 기반 전자계약 플랫폼 설립', '블록체인 기술 접목한 계약 위변조 방지 및 API 연동 서비스 개발', '설립 18개월 만에 상장사 케이사인(KSign)에 M&A'] },
@@ -181,7 +181,7 @@ export default function Home() {
       name: '노정석',
       role: '비팩토리 대표',
       desc: '연쇄 창업가, 파이브락스·태터앤컴퍼니 M&A 전문가',
-      image: '/assets/profile/노정석.png',
+      image: '/assets/profile/노정석_optimized.jpg',
       careers: [
         { period: '현재', company: '비팩토리', position: '대표 (2020~)', details: ['AI 기반 실시간 개인 맞춤 화장품 조제 스마트 팩토리', '킵(KYYB): 스킨케어 브랜드', '아멜리: AI 기술 접목 색조 브랜드'] },
         { period: 'EXIT', company: '파이브락스(5Rocks)', position: '창업자', details: ['모바일 게임 데이터 분석 기업', '미국 탭조이(Tapjoy)에 매각'] },
@@ -407,7 +407,7 @@ export default function Home() {
                   <div className="relative flex-shrink-0">
                     <div className="relative w-20 h-20 rounded-xl overflow-hidden shadow-lg">
                       <Image
-                        src="/assets/profile/노정석.png"
+                        src="/assets/profile/노정석_optimized.jpg"
                         alt="노정석"
                         fill
                         className="object-cover object-top"
@@ -441,7 +441,7 @@ export default function Home() {
                   <div className="relative flex-shrink-0">
                     <div className="relative w-20 h-20 rounded-xl overflow-hidden shadow-lg">
                       <Image
-                        src="/assets/profile/최충열.png"
+                        src="/assets/profile/최충열_optimized.jpg"
                         alt="최충열"
                         fill
                         className="object-cover object-top"
@@ -855,7 +855,7 @@ export default function Home() {
               <div className="flex items-start gap-2 text-slate-700 mb-6">
                 <MapPin size={20} className="text-blue-600 flex-shrink-0 mt-1" />
                 <div>
-                  <p className="font-medium">서울 강남구 언주로 417 모비빌딩 7층</p>
+                  <p className="font-medium">서울 강남구 언주로 417 모비빌딩 지하1층</p>
                   <p className="text-slate-500 text-sm mt-1">(지번) 역삼동 721-38 · 선릉역 도보 5분</p>
                 </div>
               </div>
@@ -880,7 +880,7 @@ export default function Home() {
                   onClick={() => openModal(0)}
                 >
                   <Image
-                    src={`/assets/place/${placeImages[0].name}.jpeg`}
+                    src={`/assets/place/${placeImages[0].name}_optimized.jpg`}
                     alt={placeImages[0].label}
                     fill
                     className="object-cover"
@@ -897,7 +897,7 @@ export default function Home() {
                     onClick={() => openModal(i + 1)}
                   >
                     <Image
-                      src={`/assets/place/${place.name}.jpeg`}
+                      src={`/assets/place/${place.name}_optimized.jpg`}
                       alt={place.label}
                       fill
                       className="object-cover"
@@ -1058,7 +1058,7 @@ export default function Home() {
             onClick={(e) => e.stopPropagation()}
           >
             <Image
-              src={`/assets/place/${placeImages[currentImageIndex].name}.jpeg`}
+              src={`/assets/place/${placeImages[currentImageIndex].name}_optimized.jpg`}
               alt={placeImages[currentImageIndex].label}
               fill
               className="object-contain"
