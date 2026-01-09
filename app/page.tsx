@@ -167,7 +167,7 @@ export default function Home() {
     },
     {
       name: '최충열',
-      role: '현 누아 CSO',
+      role: '누아 CSO',
       desc: '글로싸인 창업 → 케이사인 M&A EXIT',
       image: '/assets/profile/최충열_optimized.jpg',
       careers: [
