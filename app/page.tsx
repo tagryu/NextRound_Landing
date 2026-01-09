@@ -425,7 +425,8 @@ export default function Home() {
                     </div>
                     <div className="text-blue-600 text-sm font-medium mb-2 text-left">비팩토리</div>
                     <div className="text-slate-700 text-sm leading-relaxed text-left">
-                      <span className="font-semibold text-slate-900">아시아 최초 구글 매각</span> +<br/>
+                      <span className="font-semibold text-slate-900">아시아 최초 구글에 매각</span><br/>
+                      태터앤컴퍼니(티스토리 개발사) → 구글 매각<br/>
                       파이브락스 → 미국 탭조이 매각
                     </div>
                   </div>
