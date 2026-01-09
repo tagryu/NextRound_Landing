@@ -171,7 +171,7 @@ export default function Home() {
       desc: '글로싸인 창업 → 케이사인 M&A EXIT',
       image: '/assets/profile/최충열_optimized.jpg',
       careers: [
-        { period: '현재', company: '누아(NUUA)', position: '최고전략책임자(CSO)', details: ['항공 데이터 통합 및 AI 기반 항공권 유통 플랫폼 비즈니스 운영 총괄', '항공사 NDC(New Distribution Capability) 기술 상용화 및 B2B 파트너십 확장 주도'] },
+        { period: '현재', company: '누아(NUUA)', position: 'CSO', details: ['항공 데이터 통합 및 AI 기반 항공권 유통 플랫폼 비즈니스 운영 총괄', '항공사 NDC(New Distribution Capability) 기술 상용화 및 B2B 파트너십 확장 주도'] },
         { period: 'EXIT', company: '글로싸인(Glosign)', position: '대표이사 / 창업자', details: ['클라우드 기반 전자계약 플랫폼 설립', '블록체인 기술 접목한 계약 위변조 방지 및 API 연동 서비스 개발', '설립 18개월 만에 상장사 케이사인(KSign)에 M&A'] },
         { period: '창업', company: '프라핏(Profit)', position: '대표', details: ['중소형 상업용 건물 관리 솔루션 개발', '프롭테크 분야 스타트업 운영'] },
         { period: '활동', company: '스타트업 멘토링', position: '', details: ['광운대학교 등 대학가 스타트업 멘토', 'CEO 강연 및 창업 컨설팅 활동'] }
