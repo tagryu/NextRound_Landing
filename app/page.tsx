@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { ChevronDown, MapPin, Calendar, Clock, Users, ArrowRight, CheckCircle, Building2, Briefcase, TrendingUp, FileText, Bot, Handshake, Network, X, ChevronLeft, ChevronRight, Menu } from 'lucide-react';
+import { ChevronDown, MapPin, Calendar, Clock, Users, ArrowRight, CheckCircle, Building2, Briefcase, TrendingUp, FileText, Bot, Handshake, Network, X, ChevronLeft, ChevronRight, Menu, Database } from 'lucide-react';
 
 export default function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -548,8 +548,42 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Target Audience Section */}
+      {/* Perks Section */}
       <section className="py-24 bg-white">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <span className="text-blue-600 text-sm font-semibold uppercase tracking-widest">PERKS</span>
+            <h2 className="text-4xl md:text-5xl font-bold mt-4 text-slate-900">수강혜택</h2>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="p-8 bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-100 rounded-2xl hover:border-blue-300 hover:shadow-xl transition-all">
+              <div className="w-14 h-14 bg-blue-600 rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-blue-600/30">
+                <Database size={28} className="text-white" />
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-slate-900">데이터룸 구축 지원</h3>
+              <p className="text-slate-600 leading-relaxed">스타트업 매각을 위한 데이터룸 구축 지원</p>
+            </div>
+            <div className="p-8 bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-100 rounded-2xl hover:border-blue-300 hover:shadow-xl transition-all">
+              <div className="w-14 h-14 bg-blue-600 rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-blue-600/30">
+                <Handshake size={28} className="text-white" />
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-slate-900">M&A 딜 매칭 기회</h3>
+              <p className="text-slate-600 leading-relaxed">현재 매입을 원하는 M&A 딜에 매칭 기회 제공</p>
+            </div>
+            <div className="p-8 bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-100 rounded-2xl hover:border-blue-300 hover:shadow-xl transition-all">
+              <div className="w-14 h-14 bg-blue-600 rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-blue-600/30">
+                <FileText size={28} className="text-white" />
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-slate-900">Deal List 등록</h3>
+              <p className="text-slate-600 leading-relaxed">넥스트라운드 Deal list에 축적하여 추후 매각딜에 적용</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Target Audience Section */}
+      <section className="py-24 bg-slate-50">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
             <span className="text-blue-600 text-sm font-semibold uppercase tracking-widest">Target Audience</span>
