@@ -978,7 +978,7 @@ export default function Home() {
                 <span className="px-3 py-1 bg-slate-100 rounded-full text-xs text-slate-600">팩트시트 회원사 관리 포트폴리오 임직원</span>
               </div>
               <p className="mt-4 text-sm text-blue-600 font-semibold">
-                초대권 지참시 1,500,000원으로 할인됩니다.
+                초대권 지참시 1,250,000원으로 할인됩니다.
               </p>
             </div>
           </div>
